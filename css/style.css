@@ -1,0 +1,31 @@
+
+
+.sample {
+    background-color: yellow;
+    padding:0;
+    margin:0;
+    /* display:none; */
+    text-align: start;
+}
+
+
+label {
+    margin: 0.25rem;
+}
+#FCdetailed, #FCts{
+    height: 200px;
+    border:1px solid black;
+    text-align: start;
+    padding: 0.25rem;
+}
+#FCdetailed, #FCts{
+    overflow:auto;
+}
+#myBtn{
+    display:block;
+    margin:6px 0px;
+}
+
+/* #textArea {
+    display: none;
+} */
