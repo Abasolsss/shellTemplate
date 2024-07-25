@@ -14,9 +14,13 @@ const primaryContact = new Set(
 
 const para = document.querySelector(".sample");
 
+// import { array } from "./templates.js"
+
+// console.log(array[0].template)
 export function fcFunction() {
   const FCdetailed = document.getElementById("FCdetailed").innerHTML;
 
+ 
   const FCts = document.getElementById("FCts").innerHTML;
 
   const inputRadioName = Array.from(inputRadio).map(
@@ -88,21 +92,7 @@ export function fcFunction() {
 `;
 }
 
-export function newIssueFunct() {
-  const newIssueButton = document.getElementById("newIssueSelector");
 
-  const newIssueVal = newIssueButton.value;
-
-  switch (newIssueVal) {
-    case "netConn":
-      templateShower.innerHTML = `
-
-                <h1>Hello maderfuckers!</h1>
-            
-            `;
-      break;
-
-    default:
-      break;
-  }
+export function testFunction() {
+  console.log("hello world")
 }

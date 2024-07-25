@@ -2,7 +2,7 @@ const templateSelect = document.getElementById("templateSelector");
 
 const templateShower = document.getElementById("templateShower");
 
-const array = [
+export const array = [
   {
     templateName: "fcTemplate",
     template: `
@@ -182,6 +182,7 @@ const array = [
             </button>
           </div>
       `,
+      
   },
 
   {
@@ -194,30 +195,47 @@ const array = [
 
 //functions
 
-// const templateShower = document.getElementById("templateShower");
 
 export function templateValueFunct() {
   templateSelect.addEventListener("change", (e) => {
     const values = e.currentTarget.value;
     for (let i = 0; i < array.length; i++) {
       const issueTemplate = array[i].template;
-
       switch (values) {
         case array[i].templateName:
           templateShower.innerHTML = `
               ${issueTemplate}
             `;
           break;
-
-        case array[i].templateName:
-          templateShower.innerHTML = `
-            ${issueTemplate}
-          `;
-          break;
-
         default:
           break;
       }
     }
   });
+
+
+
+}
+
+
+
+export function newIssueFunct() {
+  const newIssueButton = document.getElementById("newIssueSelector");
+  const newIssueVal = newIssueButton.value;
+
+  for (let i = 0; i < array.length; i++) {
+    const issueTemplate = array[i].template;
+
+    switch (newIssueVal) {
+      case array[i].templateName:
+        templateShower.innerHTML = `
+            ${issueTemplate}
+          `;
+          templateSelect.selectedIndex = i += 1;
+          newIssueButton.selectedIndex = 0;
+        break;
+      default:
+        break;
+    }
+  }
 }
