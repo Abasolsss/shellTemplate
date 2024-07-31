@@ -16,6 +16,13 @@
       crossorigin="anonymous"
     ></script>
 
+        <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.all.min.js
+    "></script>
+    <link href="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.3/dist/sweetalert2.min.css
+    " rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css" />
     <title>Template</title>
   </head>
@@ -44,7 +51,7 @@
           id="templateSelector"
         
         >
-          <option selected class="hello">Open this select menu</option>
+          <option selected class="hello" disabled>Open this select menu</option>
           <option value="fcTemplate">Fuel Controller Template</option>
           <option value="netConn">Network Connectivity</option>
        
@@ -54,6 +61,7 @@
           class="containe p-3 text-center d-flex justify-content-center align-items-center flex-column gap-1"
           id="templateShower"
         >
+        
       </div>
     </div>
 
@@ -96,8 +104,6 @@
             >
               Select
             </button>
-
-         
           </div>
         </div>
       </div>

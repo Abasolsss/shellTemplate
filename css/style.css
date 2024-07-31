@@ -1,13 +1,12 @@
 
 
 .sample {
-    background-color: yellow;
     padding:0;
     margin:0;
-    /* display:none; */
     text-align: start;
+    display: none;
+    white-space:inherit;
 }
-
 
 label {
     margin: 0.25rem;
