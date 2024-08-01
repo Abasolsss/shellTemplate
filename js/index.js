@@ -3,10 +3,10 @@ import { templateValueFunct, newIssueFunct } from "./templates.js";
 
 const templateSelect = document.getElementById("templateSelector");
 
+const newIssueSelect = document.getElementById("newIssueSelector")
+
 document.addEventListener("DOMContentLoaded", () => {
   templateValueFunct();
-  newIssueFunct();
-
   const newIssueBtn = document.getElementById("newIssue");
   if (newIssueBtn) {
     newIssueBtn.addEventListener("click", () => {
@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
 
 if (templateSelect) {
   templateSelect.addEventListener("change", (e) => {

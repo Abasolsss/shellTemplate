@@ -1,3 +1,5 @@
+
+
 const templateSelect = document.getElementById("templateSelector");
 
 const templateShower = document.getElementById("templateShower");
@@ -21,12 +23,12 @@ export const array = [
             **Is C-Location found in Service Advisory Check?
             <label>
               Yes
-              <input type="radio" name="FCradio1" value="Yes" />
+              <input type="radio" name="SAradio8" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio1" value="No" />
+              <input type="radio" name="SAradio8" value="No" />
             </label>
           </span>
 
@@ -34,12 +36,12 @@ export const array = [
             **If yes, is the Service Advisory related to the issue reported?
             <label>
               Yes
-              <input type="radio" name="FCradio2" value="Yes" />
+              <input type="radio" name="SAradio9" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio2" value="No" />
+              <input type="radio" name="SAradio9" value="No" />
             </label>
           </span>
 
@@ -86,12 +88,12 @@ export const array = [
             Is there any recent POS updgrade?
             <label>
               Yes
-              <input type="radio" name="FCradio3" value="Yes" />
+              <input type="radio" name="SAradio10" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio3" value="No" />
+              <input type="radio" name="SAradio10" value="No" />
             </label>
           </span>
 
@@ -104,12 +106,12 @@ export const array = [
             is the Fuel Controller available on SMTOOLS?
             <label>
               Yes
-              <input type="radio" name="FCradio4" value="Yes" />
+              <input type="radio" name="SAradio11" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio4" value="No" />
+              <input type="radio" name="SAradio11" value="No" />
             </label>
           </span>
 
@@ -117,12 +119,12 @@ export const array = [
             is there power in the pump/fuel dispenser?
             <label>
               Yes
-              <input type="radio" name="FCradio5" value="Yes" />
+              <input type="radio" name="SAradio12" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio5" value="No" />
+              <input type="radio" name="SAradio12" value="No" />
             </label>
           </span>
 
@@ -130,12 +132,12 @@ export const array = [
             is the power cable properly connected
             <label>
               Yes
-              <input type="radio" name="FCradio6" value="Yes" />
+              <input type="radio" name="SAradio13" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio6" value="No" />
+              <input type="radio" name="SAradio13" value="No" />
             </label>
           </span>
 
@@ -143,12 +145,12 @@ export const array = [
             Emergency Alarm Reset?
             <label>
               Yes
-              <input type="radio" name="FCradio7" value="Yes" />
+              <input type="radio" name="SAradio14" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio7" value="No" />
+              <input type="radio" name="SAradio14" value="No" />
             </label>
           </span>
 
@@ -205,12 +207,12 @@ export const array = [
           **Is C-Location found in Service Advisory Check?
           <label>
             Yes
-            <input type="radio" name="FCradio1" value="Yes" />
+            <input type="radio" name="SAradio1" value="Yes" />
           </label>
 
           <label>
             No
-            <input type="radio" name="FCradio1" value="No" />
+            <input type="radio" name="SAradio1" value="No" />
           </label>
         </span>
 
@@ -218,12 +220,12 @@ export const array = [
           **If yes, is the Service Advisory related to the issue reported?
           <label>
             Yes
-            <input type="radio" name="FCradio2" value="Yes" />
+            <input type="radio" name="SAradio2" value="Yes" />
           </label>
 
           <label>
             No
-            <input type="radio" name="FCradio2" value="No" />
+            <input type="radio" name="SAradio2" value="No" />
           </label>
         </span>
 
@@ -266,10 +268,6 @@ export const array = [
             contenteditable="true"
           ></div>
           <label>
-            Subject:
-            <input type="text" name="" />
-          </label>
-          <label>
             **If yes, please note the cutover date from the RTM sites file:
             <input type="text" name="" />
           </label>
@@ -277,12 +275,12 @@ export const array = [
             Is the site offline on toolset?
             <label>
               Yes
-              <input type="radio" name="FCradio2" value="Yes" />
+              <input type="radio" name="SAradio3" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio2" value="No" />
+              <input type="radio" name="SAradio3" value="No" />
             </label>
           </span>
 
@@ -290,12 +288,12 @@ export const array = [
             Cybera Status A in red?
             <label>
               Yes
-              <input type="radio" name="FCradio2" value="Yes" />
+              <input type="radio" name="SAradio4" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio2" value="No" />
+              <input type="radio" name="SAradio4" value="No" />
             </label>
           </span>
 
@@ -303,12 +301,12 @@ export const array = [
             Is the network cable/s properly connected?
             <label>
               Yes
-              <input type="radio" name="FCradio2" value="Yes" />
+              <input type="radio" name="SAradio5" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio2" value="No" />
+              <input type="radio" name="SAradio5" value="No" />
             </label>
           </span>
 
@@ -317,12 +315,12 @@ export const array = [
             Power cycled the modem.
             <label>
               Yes
-              <input type="radio" name="FCradio2" value="Yes" />
+              <input type="radio" name="SAradio6" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="FCradio2" value="No" />
+              <input type="radio" name="SAradio6" value="No" />
             </label>
           </span>
 
@@ -363,7 +361,114 @@ export const array = [
             </button>
       `,
   },
+
+  {
+    templateName: "EODFailedPOS",
+    template: `
+    <h1>EOD Failed on POS</h1>
+      <label>
+         Subject:
+         <input type="text" name="" />
+       </label>
+
+       <label>
+         C-Location:
+         <input type="text" name="" id="" />
+       </label>
+
+       <span>
+         **Is C-Location found in Service Advisory Check?
+         <label>
+           Yes
+           <input type="radio" name="SAradio1" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio1" value="No" />
+         </label>
+       </span>
+
+       <span>
+         **If yes, is the Service Advisory related to the issue reported?
+         <label>
+           Yes
+           <input type="radio" name="SAradio2" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio2" value="No" />
+         </label>
+       </span>
+
+       <label for="">
+         Name of Caller:
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="">
+         Primary Contact Number
+         <input type="number" name="" id="" />
+       </label>
+
+       <label for="">
+         Alternate Contact Name:
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="">
+         Alternate Contact Number
+         <input type="number" name="" id="" />
+       </label>
+
+       <label for="">
+         Best Time to Call(BTTC):
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="">
+         Email Address(if available)
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="exampleFormControlTextarea1" class="form-label"
+         >Detailed Description of the issue:</label
+       >
+       <div
+           id="FCdetailed"
+           class="container-fluid"
+           contenteditable="true"
+         ></div>
+         
+         <label>
+           Service Advisory Description (If Available):
+           <input type="text" name="" />
+         </label>
+
+
+         <div class="sample" contenteditable="true"></div>
+
+         <div class="buttons">
+           <button type="button" class="btn btn-warning" id="testButton"
+       
+           >
+             Generate
+           </button>
+
+           <button
+             type="button"
+             class="btn btn-warning"
+             data-bs-toggle="modal"
+             data-bs-target="#exampleModal"
+           >
+             New Issue
+           </button>
+     `,
+  }
 ];
+
+
 
 //functions
 export function templateValueFunct() {
@@ -401,4 +506,5 @@ export function newIssueFunct() {
         break;
     }
   }
+
 }
