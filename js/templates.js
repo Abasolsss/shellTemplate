@@ -185,7 +185,6 @@ export const array = [
             </button>
           </div>
       `,
-      
   },
 
   {
@@ -388,7 +387,6 @@ export function templateValueFunct() {
 export function newIssueFunct() {
   const newIssueButton = document.getElementById("newIssueSelector");
   const newIssueVal = newIssueButton.value;
-
   for (let i = 0; i < array.length; i++) {
     const issueTemplate = array[i].template;
     switch (newIssueVal) {
@@ -396,8 +394,8 @@ export function newIssueFunct() {
         templateShower.innerHTML = `
             ${issueTemplate}
           `;
-          templateSelect.selectedIndex = i += 1;
-          newIssueButton.selectedIndex = 0;
+        templateSelect.selectedIndex = i += 1;
+        newIssueButton.selectedIndex = 0;
         break;
       default:
         break;

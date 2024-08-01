@@ -1,32 +1,49 @@
-export function fcFunction() {
-  const FCdetailedElem = document.getElementById("FCdetailed")
-
-  const FCtsElem = document.getElementById("FCts")
-
-  if(!FCdetailedElem || !FCtsElem) {
-    console.error("Required Elements not found in the DOM")
-    return
-  }
-
-  const FCdetailed = FCdetailedElem.innerHTML
-  const FCts = FCtsElem.innerHTML
+const basicInputs = () => {
+  const basicInputsArr = [];
 
   const templateShower = document.getElementById("templateShower");
 
-const inputText = new Set(
-  Array.from(templateShower.querySelectorAll(`input[type="text"]`))
-);
+  const inputText = new Set(
+    Array.from(templateShower.querySelectorAll(`input[type="text"]`))
+  );
 
-const inputRadio = new Set(
-  Array.from(templateShower.querySelectorAll(`input[type="radio"]`))
-);
+  const inputRadio = new Set(
+    Array.from(templateShower.querySelectorAll(`input[type="radio"]`))
+  );
 
-const primaryContact = new Set(
-  Array.from(templateShower.querySelectorAll(`input[type="number"]`))
-);
+  const primaryContact = new Set(
+    Array.from(templateShower.querySelectorAll(`input[type="number"]`))
+  );
 
-const para = document.querySelector(".sample");
- 
+  basicInputsArr.push(inputText, inputRadio, primaryContact);
+
+  return basicInputsArr;
+};
+
+export const fcFunction = () => {
+  const FCdetailedElem = document.getElementById("FCdetailed");
+
+  const FCtsElem = document.getElementById("FCts");
+
+  const mandatoryInputs = basicInputs();
+
+  if (!FCdetailedElem || !FCtsElem) {
+    console.error("Required Elements not found in the DOM");
+    return;
+  }
+
+  //need clocation, name, phone #,side advisory
+
+  const FCdetailed = FCdetailedElem.innerHTML;
+  const FCts = FCtsElem.innerHTML;
+
+  const inputText = mandatoryInputs[0];
+
+  const inputRadio = mandatoryInputs[1];
+
+  const primaryContact = mandatoryInputs[2];
+
+  const para = document.querySelector(".sample");
 
   const inputRadioName = Array.from(inputRadio).map(
     (radioName) => radioName.name
@@ -71,7 +88,7 @@ const para = document.querySelector(".sample");
     radioFinalVal.push(FCradioCount);
   }
 
- const text =  para.innerHTML = ` 
+  const text = (para.innerHTML = ` 
   Subject: ${textValue[0]}\r
   c-Location: ${textValue[1]}\r
   **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
@@ -94,10 +111,11 @@ const para = document.querySelector(".sample");
   ${FCts}
   Service Advisory Description (If Available): ${textValue[7]}\r
   Suggested KBA: All Pumps Down - (Fuel Controller Offline)
-`;
+`);
 
-// const replace = text.replace(/\n/g,'<br />');
+  // const replace = text.replace(/\n/g,'<br />');
 
-navigator.clipboard.writeText(text);
+  navigator.clipboard.writeText(text);
+};
 
-}
+export const netConn = () => {};

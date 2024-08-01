@@ -1,47 +1,48 @@
-import { fcFunction } from "./functions.js";
+import { fcFunction, netConn } from "./functions.js";
 import { templateValueFunct, newIssueFunct } from "./templates.js";
 
-
-const templateSelect = document.getElementById("templateSelector")
-
+const templateSelect = document.getElementById("templateSelector");
 
 document.addEventListener("DOMContentLoaded", () => {
-  templateValueFunct()
-  newIssueFunct()
+  templateValueFunct();
+  newIssueFunct();
 
-  const newIssueBtn = document.getElementById("newIssue")
-  if(newIssueBtn) {
+  const newIssueBtn = document.getElementById("newIssue");
+  if (newIssueBtn) {
     newIssueBtn.addEventListener("click", () => {
       window.scrollTo({
         top: 0,
         left: 100,
         behavior: "smooth",
       });
-        newIssueFunct()
-    })
+      newIssueFunct();
+    });
   }
-})
+});
 
-if(templateSelect) {
+if (templateSelect) {
   templateSelect.addEventListener("change", (e) => {
-    const selectedTemplate = e.currentTarget.value
+    const selectedTemplate = e.currentTarget.value;
     setTimeout(() => {
       document.getElementById("testButton").addEventListener("click", () => {
         switch (selectedTemplate) {
           case "fcTemplate":
-            fcFunction()
+            fcFunction();
             break;
+
+          case "netConn":
+            netConn();
+            break;
+
           default:
             break;
         }
         Swal.fire({
           title: "Good job!",
           text: "Template copied!",
-          icon: "success"
+          icon: "success",
         });
-      })
+      });
     }, 0);
-  })
+  });
 }
-
-
