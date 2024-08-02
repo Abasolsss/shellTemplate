@@ -1,4 +1,4 @@
-const basicInputs = () => {
+ export function basicInputs () {
   const basicInputsArr = [];
 
   const templateShower = document.getElementById("templateShower");
@@ -71,7 +71,7 @@ const basicInputs = () => {
   const FCts = FCtsElem.innerText;
   const para = document.querySelector(".sample");
 
-  basicInputsArr.push(textValue,radioFinalVal,primaryContactValue,FCdetailed,FCts,para)
+  basicInputsArr.push(textValue,radioFinalVal,primaryContactValue,FCdetailed,FCts,para,inputText)
 
 
   return basicInputsArr
@@ -96,7 +96,18 @@ export const fcFunction = () => {
   const FCdetailed = basicFunction[3]
   const FCts = basicFunction[4]
   const para = basicFunction[5]
-  
+
+
+  localStorage.setItem("cLocation", textValue[1])
+  localStorage.setItem("SiteAd1", radioFinalVal[0])
+  localStorage.setItem("SiteAd2", radioFinalVal[1])
+  localStorage.setItem("CallerName", textValue[2])
+  localStorage.setItem("primeNumber", primaryContactValue[0])
+  localStorage.setItem("altNumber", primaryContactValue[1])
+  localStorage.setItem("bestTime", textValue[4])
+  localStorage.setItem("emailAd", textValue[5])
+
+
   const text = (para.innerText =
 `Subject: ${textValue[0]}\r
 c-Location: ${textValue[1]}\r

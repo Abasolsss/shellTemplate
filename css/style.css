@@ -8,6 +8,12 @@
     white-space:inherit;
 }
 
+.display-none {
+    display: none;
+}
+.displayimport {
+    display: none !important;
+}
 label {
     margin: 0.25rem;
 }

@@ -1,8 +1,16 @@
 
+// import { fcFunction, netConn, basicInputs } from "./functions.js";
+
+import { basicInputs } from "./functions.js";
+
+
+
 
 const templateSelect = document.getElementById("templateSelector");
 
 const templateShower = document.getElementById("templateShower");
+
+const newIssueSelect = document.getElementById("newIssueSelector")
 
 export const array = [
   {
@@ -465,19 +473,37 @@ export const array = [
              New Issue
            </button>
      `,
-  }
+  },
+
 ];
 
 
+const testArray = [
+    {
+      test: 
+      `
+      <button class="test">test</button>
+      `
+    }
+]
 
 //functions
 export function templateValueFunct() {
+
   templateSelect.addEventListener("change", (e) => {
     const values = e.currentTarget.value;
     for (let i = 0; i < array.length; i++) {
       const issueTemplate = array[i].template;
       switch (values) {
         case array[i].templateName:
+          localStorage.removeItem("cLocation")
+          localStorage.removeItem("SiteAd1")
+          localStorage.removeItem("SiteAd2")
+          localStorage.removeItem("CallerName")
+          localStorage.removeItem("primeNumber")
+          localStorage.removeItem("altNumber")
+          localStorage.removeItem("bestTime")
+          localStorage.removeItem("emailAd")
           templateShower.innerHTML = `
               ${issueTemplate}
             `;
@@ -490,21 +516,35 @@ export function templateValueFunct() {
 }
 
 export function newIssueFunct() {
-  const newIssueButton = document.getElementById("newIssueSelector");
-  const newIssueVal = newIssueButton.value;
-  for (let i = 0; i < array.length; i++) {
-    const issueTemplate = array[i].template;
-    switch (newIssueVal) {
-      case array[i].templateName:
-        templateShower.innerHTML = `
-            ${issueTemplate}
-          `;
-        templateSelect.selectedIndex = i += 1;
-        newIssueButton.selectedIndex = 0;
-        break;
-      default:
-        break;
+  newIssueSelect.addEventListener("change", (e) => {
+    const values = e.currentTarget.value;
+    for (let i = 0; i < array.length; i++) {
+      const issueTemplate = array[i].template;
+      switch (values) {
+        case array[i].templateName:
+         window.scrollTo({
+            top: 0,
+            left: 100,
+            behavior: "smooth",
+          });
+          templateShower.innerHTML = `
+              ${issueTemplate}
+            `;
+            templateSelect.selectedIndex = i += 1;
+            // newIssueButton.selectedIndex = 0;
+          const test = basicInputs()
+          const testName = localStorage.getItem("cLocation")
+          const tests = test[6]
+          const pot = []
+              tests.forEach((el) => {
+                pot.push(el)
+              })
+              pot[1].value = testName
+        
+          break;
+        default:
+          break;
+      }
     }
-  }
-
+  });
 }

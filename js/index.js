@@ -5,23 +5,47 @@ const templateSelect = document.getElementById("templateSelector");
 
 const newIssueSelect = document.getElementById("newIssueSelector")
 
-document.addEventListener("DOMContentLoaded", () => {
-  templateValueFunct();
-  const newIssueBtn = document.getElementById("newIssue");
-  if (newIssueBtn) {
-    newIssueBtn.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        left: 100,
-        behavior: "smooth",
+
+templateValueFunct();
+newIssueFunct();
+
+// new issue
+if (newIssueSelect) {
+  newIssueSelect.addEventListener("change", (e) => {
+    const selectedTemplate = e.currentTarget.value;
+    const modalBody = document.querySelector(".modal-backdrop")
+    const modalContent = document.querySelector(".modal-content")
+    const modalOpa = document.querySelector(".modal")
+ 
+    modalBody.classList.add("display-none")
+    modalContent.classList.add("display-none")
+    modalOpa.classList.add("displayimport")
+    
+    setTimeout(() => {
+      document.getElementById("testButton").addEventListener("click", () => {
+        switch (selectedTemplate) {
+          case "fcTemplate":
+            fcFunction();
+            break;
+
+          case "netConn":
+            netConn();
+            break;
+
+          default:
+            break;
+        }
+        Swal.fire({
+          title: "Good job!",
+          text: "Template copied!",
+          icon: "success",
+        });
       });
-      newIssueFunct();
-    });
-  }
-});
+    }, 0);
+  });
+}
 
-
-
+//current issue
 if (templateSelect) {
   templateSelect.addEventListener("change", (e) => {
     const selectedTemplate = e.currentTarget.value;
