@@ -1,4 +1,4 @@
-import { fcFunction, netConn } from "./functions.js";
+import { fcFunction, netConn,eodFailedOnPos,fuelPriceChange } from "./functions.js";
 import { templateValueFunct, newIssueFunct } from "./templates.js";
 
 const templateSelect = document.getElementById("templateSelector");
@@ -9,18 +9,12 @@ const newIssueSelect = document.getElementById("newIssueSelector")
 templateValueFunct();
 newIssueFunct();
 
+
 // new issue
 if (newIssueSelect) {
   newIssueSelect.addEventListener("change", (e) => {
     const selectedTemplate = e.currentTarget.value;
-    const modalBody = document.querySelector(".modal-backdrop")
-    const modalContent = document.querySelector(".modal-content")
-    const modalOpa = document.querySelector(".modal")
- 
-    modalBody.classList.add("display-none")
-    modalContent.classList.add("display-none")
-    modalOpa.classList.add("displayimport")
-    
+    // document.body.style.padding = 0;
     setTimeout(() => {
       document.getElementById("testButton").addEventListener("click", () => {
         switch (selectedTemplate) {
@@ -31,6 +25,14 @@ if (newIssueSelect) {
           case "netConn":
             netConn();
             break;
+
+            case "EODFailedPOS":
+              eodFailedOnPos();
+              break;
+
+              case "fuelPriceChange":
+                fuelPriceChange()
+                break;
 
           default:
             break;
@@ -45,7 +47,8 @@ if (newIssueSelect) {
   });
 }
 
-//current issue
+
+
 if (templateSelect) {
   templateSelect.addEventListener("change", (e) => {
     const selectedTemplate = e.currentTarget.value;
@@ -59,6 +62,14 @@ if (templateSelect) {
           case "netConn":
             netConn();
             break;
+
+            case "EODFailedPOS":
+              eodFailedOnPos();
+              break;
+
+              case "fuelPriceChange":
+                fuelPriceChange()
+                break;
 
           default:
             break;

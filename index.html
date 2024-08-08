@@ -45,27 +45,37 @@
       </div>
     </nav>
 
-    <div class="container-fluid mx-auto p-2">
-      <h1 class="text-center" id="templateName">Issue Template</h1>
-      <div class="container text-center">
-        <select
-          class="form-select"
-          aria-label="Default select example"
-          id="templateSelector"
-        >
-          <option selected class="hello" disabled>Open this select menu</option>
-          <option value="fcTemplate">Fuel Controller Template</option>
-          <option value="netConn">Network Connectivity</option>
-          <option value="EODFailedPOS">EOD Failed on POS</option>
-        </select>
+    <div class="container mx-auto p-2">
+    
+      <div class="row">
+        <div class="col-8 text-center">
+          <h1 class="text-center" id="templateName">Issue Template</h1>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            id="templateSelector"
+          >
+            <option selected class="hello" disabled>Open this select menu</option>
+            <option value="fcTemplate">Fuel Controller Template</option>
+            <option value="netConn">Network Connectivity</option>
+            <option value="EODFailedPOS">EOD Failed on POS</option>
+            <option value="fuelPriceChange">Fuel Price Change</option>
+          </select>
+  
+          <div
+            class="container p-3 text-center d-flex justify-content-center align-items-center flex-column gap-1"
+            id="templateShower"
+          ></div>
+        </div>
 
-        <div
-          class="containe p-3 text-center d-flex justify-content-center align-items-center flex-column gap-1"
-          id="templateShower"
-        ></div>
+        <div class="col-4">
+          <textarea class="form-control" placeholder="Sidenote Here" id="floatingTextarea2" style="height:200px;resize:none;"></textarea>
+        </div>
       </div>
     </div>
 
+
+    <!-- new issue -->
     <!-- Modal -->
     <div
       class="modal fade"
@@ -95,6 +105,7 @@
               <option value="fcTemplate">Fuel Controller Template</option>
               <option value="netConn">Network Connectivity</option>
               <option value="EODFailedPOS">EOD Failed on POS</option>
+              <option value="fuelPriceChange">Fuel Price Change</option>
             </select>
           </div>
           <!-- <div class="modal-footer">

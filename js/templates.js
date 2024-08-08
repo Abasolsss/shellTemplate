@@ -3,6 +3,17 @@
 
 import { basicInputs } from "./functions.js";
 
+const removeItems = () => {
+  localStorage.removeItem("cLocation")
+          localStorage.removeItem("siteAd1")
+          localStorage.removeItem("siteAd2")
+          localStorage.removeItem("callerName")
+          localStorage.removeItem("primeNumber")
+          localStorage.removeItem("altNumber")
+          localStorage.removeItem("bestTime")
+          localStorage.removeItem("emailAd")
+          localStorage.removeItem("altName")
+}
 
 
 
@@ -31,12 +42,12 @@ export const array = [
             **Is C-Location found in Service Advisory Check?
             <label>
               Yes
-              <input type="radio" name="SAradio8" value="Yes" />
+              <input type="radio" name="SAradio1" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="SAradio8" value="No" />
+              <input type="radio" name="SAradio1" value="No" />
             </label>
           </span>
 
@@ -44,12 +55,12 @@ export const array = [
             **If yes, is the Service Advisory related to the issue reported?
             <label>
               Yes
-              <input type="radio" name="SAradio9" value="Yes" />
+              <input type="radio" name="SAradio2" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="SAradio9" value="No" />
+              <input type="radio" name="SAradio2" value="No" />
             </label>
           </span>
 
@@ -96,12 +107,12 @@ export const array = [
             Is there any recent POS updgrade?
             <label>
               Yes
-              <input type="radio" name="SAradio10" value="Yes" />
+              <input type="radio" name="SAradio3" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="SAradio10" value="No" />
+              <input type="radio" name="SAradio3" value="No" />
             </label>
           </span>
 
@@ -114,12 +125,12 @@ export const array = [
             is the Fuel Controller available on SMTOOLS?
             <label>
               Yes
-              <input type="radio" name="SAradio11" value="Yes" />
+              <input type="radio" name="SAradio4" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="SAradio11" value="No" />
+              <input type="radio" name="SAradio4" value="No" />
             </label>
           </span>
 
@@ -127,12 +138,12 @@ export const array = [
             is there power in the pump/fuel dispenser?
             <label>
               Yes
-              <input type="radio" name="SAradio12" value="Yes" />
+              <input type="radio" name="SAradio5" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="SAradio12" value="No" />
+              <input type="radio" name="SAradio5" value="No" />
             </label>
           </span>
 
@@ -140,12 +151,12 @@ export const array = [
             is the power cable properly connected
             <label>
               Yes
-              <input type="radio" name="SAradio13" value="Yes" />
+              <input type="radio" name="SAradio6" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="SAradio13" value="No" />
+              <input type="radio" name="SAradio6" value="No" />
             </label>
           </span>
 
@@ -153,12 +164,12 @@ export const array = [
             Emergency Alarm Reset?
             <label>
               Yes
-              <input type="radio" name="SAradio14" value="Yes" />
+              <input type="radio" name="SAradio7" value="Yes" />
             </label>
 
             <label>
               No
-              <input type="radio" name="SAradio14" value="No" />
+              <input type="radio" name="SAradio7" value="No" />
             </label>
           </span>
 
@@ -448,12 +459,70 @@ export const array = [
            class="container-fluid"
            contenteditable="true"
          ></div>
-         
+
+        <span>
+         Is there a 'Server Offline' alarm on POS?
          <label>
-           Service Advisory Description (If Available):
-           <input type="text" name="" />
+           Yes
+           <input type="radio" name="SAradio3" value="Yes" />
          </label>
 
+         <label>
+           No
+           <input type="radio" name="SAradio3" value="No" />
+         </label>
+       </span>
+
+         <span>
+         Have they successfully Closed the Shift on the POS?
+         <label>
+           Yes
+           <input type="radio" name="SAradio4" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio4" value="No" />
+         </label>
+       </span>
+
+      <p>
+        **If yes, confirm in RSM>POS Management
+        **If no, follow the KB instructions.
+      </p>
+
+      <p>
+        Is there any ticket/s opened related to the issue in the past month?
+      </p>
+
+      <p>
+        **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+      </p>
+
+       <label for="">Troubleshooting/Resolution:</label>
+          <div id="FCts" class="container-fluid" contenteditable="true"></div>
+
+          <label for="">
+            Resolution (what fixed the issue?):
+            <input type="text" name="" id="" />
+          </label>
+
+
+
+           <label for="">
+            ﻿Service Advisory Description (if Available):
+            <input type="text" name="" id="" />
+          </label>
+
+      
+      <p>
+        Suggested KBAs:<br/>
+        End of Day (EOD) or End of Shift (EOS) Do Not Print<br/>
+        POS Report Missing OR No Data To Report<br/>
+        EOD Device total issue<br/>
+        End Of Day (EOD) Failure Alert on the POS or Batch In Progress<br/>
+    </p>
+  
 
          <div class="sample" contenteditable="true"></div>
 
@@ -475,6 +544,165 @@ export const array = [
      `,
   },
 
+  {
+    templateName: "fuelPriceChange",
+    template: `
+    <h1>Fuel Price Change</h1>
+      <label>
+         Subject:
+         <input type="text" name="" />
+       </label>
+
+       <label>
+         C-Location:
+         <input type="text" name="" id="" />
+       </label>
+
+       <span>
+         **Is C-Location found in Service Advisory Check?
+         <label>
+           Yes
+           <input type="radio" name="SAradio1" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio1" value="No" />
+         </label>
+       </span>
+
+       <span>
+         **If yes, is the Service Advisory related to the issue reported?
+         <label>
+           Yes
+           <input type="radio" name="SAradio2" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio2" value="No" />
+         </label>
+       </span>
+
+       <label for="">
+         Name of Caller:
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="">
+         Primary Contact Number
+         <input type="number" name="" id="" />
+       </label>
+
+       <label for="">
+         Alternate Contact Name:
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="">
+         Alternate Contact Number
+         <input type="number" name="" id="" />
+       </label>
+
+       <label for="">
+         Best Time to Call(BTTC):
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="">
+         Email Address(if available)
+         <input type="text" name="" id="" />
+       </label>
+
+       <label for="exampleFormControlTextarea1" class="form-label"
+         >Detailed Description of the issue:</label
+       >
+
+
+       <div
+           id="FCdetailed"
+           class="container-fluid"
+           contenteditable="true"
+         ></div>
+
+      <label for="">
+       What time did the issue occur:
+         <input type="text" name="" id="" />
+       </label>
+
+      <label for="">
+      What Fuel Grades are impacted:
+         <input type="text" name="" id="" />
+       </label>
+
+    <span>
+         Can the site change the prices manually through RSM/POS?
+         <label>
+           Yes
+           <input type="radio" name="SAradio3" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio3" value="No" />
+         </label>
+       </span>
+
+        <span>
+        Did they check for BOS offline or server offline message?
+         <label>
+           Yes
+           <input type="radio" name="SAradio4" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio4" value="No" />
+         </label>
+       </span>
+
+       <p>
+       (if this is the case they should be following the server offline KB)
+       </p>
+
+
+        <label for="">Troubleshooting/Resolution:</label>
+          <div id="FCts" class="container-fluid" contenteditable="true"></div>
+
+          
+           <label for="">
+           Resolution (what fixed the issue?):
+            <input type="text" name="" id="" />
+          </label>
+          
+    <label for="">
+      Service Advisory Description (if Available):
+         <input type="text" name="" id="" />
+    </label>
+
+            <div class="sample" contenteditable="true"></div>
+
+  
+
+       <div class="buttons">
+           <button type="button" class="btn btn-warning" id="testButton"
+       
+           >
+             Generate
+           </button>
+
+           <button
+             type="button"
+             class="btn btn-warning"
+             data-bs-toggle="modal"
+             data-bs-target="#exampleModal"
+           >
+             New Issue
+           </button>
+          </div>
+    `
+  },
+
 ];
 
 
@@ -489,21 +717,13 @@ const testArray = [
 
 //functions
 export function templateValueFunct() {
-
   templateSelect.addEventListener("change", (e) => {
     const values = e.currentTarget.value;
     for (let i = 0; i < array.length; i++) {
       const issueTemplate = array[i].template;
       switch (values) {
         case array[i].templateName:
-          localStorage.removeItem("cLocation")
-          localStorage.removeItem("SiteAd1")
-          localStorage.removeItem("SiteAd2")
-          localStorage.removeItem("CallerName")
-          localStorage.removeItem("primeNumber")
-          localStorage.removeItem("altNumber")
-          localStorage.removeItem("bestTime")
-          localStorage.removeItem("emailAd")
+          removeItems()
           templateShower.innerHTML = `
               ${issueTemplate}
             `;
@@ -518,6 +738,8 @@ export function templateValueFunct() {
 export function newIssueFunct() {
   newIssueSelect.addEventListener("change", (e) => {
     const values = e.currentTarget.value;
+    const test = document.querySelector("body")
+    test.classList.add("modals")
     for (let i = 0; i < array.length; i++) {
       const issueTemplate = array[i].template;
       switch (values) {
@@ -533,14 +755,80 @@ export function newIssueFunct() {
             templateSelect.selectedIndex = i += 1;
             // newIssueButton.selectedIndex = 0;
           const test = basicInputs()
-          const testName = localStorage.getItem("cLocation")
-          const tests = test[6]
-          const pot = []
-              tests.forEach((el) => {
-                pot.push(el)
+          const cLocation = localStorage.getItem("cLocation")
+          const siteAd1 = localStorage.getItem("siteAd1")
+          const siteAd2 = localStorage.getItem("siteAd2")
+          const callerName = localStorage.getItem("callerName")
+          const bestTime = localStorage.getItem("bestTime")
+          const emailAd = localStorage.getItem("emailAd")
+          const primeNum = localStorage.getItem("primeNumber")
+          const altNum = localStorage.getItem("altNumber")
+
+
+          const contactInput = test[8]
+          const inputText = test[6]
+          const inputTextVal = []
+              inputText.forEach((el) => {
+                inputTextVal.push(el)
               })
-              pot[1].value = testName
-        
+              inputTextVal[1].value = cLocation //cLocation
+              inputTextVal[2].value = callerName // callerName
+              inputTextVal[3].value = callerName //alternative name
+              inputTextVal[4].value = bestTime // Best time to call
+              inputTextVal[5].value = emailAd // Email Add
+              
+              // const primeNumVal = parseInt(primeNum)
+
+              const contactInputsFinal = []
+              contactInput.forEach((e) => {
+                contactInputsFinal.push(e)
+              })
+
+       
+              contactInputsFinal[0].value = primeNum
+
+             
+              contactInputsFinal[1].value = altNum
+
+              // console.log(contactDetailsVal)
+              
+              
+  
+          
+
+              const radioName = test[7]
+              // console.log(test[2])
+              const radioArrName = []
+              radioName.forEach((el) => {
+                radioArrName.push(el)
+              })
+              const finalRadio = radioArrName.slice(1,3)
+              const saRad1 = document.querySelectorAll(`input[name="${finalRadio[0]}"]`);
+
+              const saRad2 = document.querySelectorAll(`input[name="${finalRadio[1]}"]`);
+
+              const saReValue1 = saRad1.value = siteAd1
+              const saReValue2 = saRad2.value = siteAd2
+              if(saReValue1 === "No") {
+                saRad1[1].checked = true
+              } else if(saReValue1 === "Yes") {
+                saRad1[0].checked = true
+              } else {
+                saRad1[1].checked = false
+                saRad1[0].checked = false
+              }
+
+              if(saReValue2 === "No") {
+                saRad2[1].checked = true
+              } else if(saReValue2 === "Yes") {
+                saRad2[0].checked = true
+              } else {
+                saRad1[1].checked = false
+                saRad1[0].checked = false
+              }
+
+      
+              
           break;
         default:
           break;

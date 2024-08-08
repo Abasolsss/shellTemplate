@@ -33,6 +33,8 @@
 
   let radioFinalVal = [];
 
+  let primaryNumVal = []
+
   inputTextValue.forEach((textVal) => {
     if (textVal === "") {
       const noVal = "N/A";
@@ -41,6 +43,18 @@
       textValue.push(textVal);
     }
   });
+
+  primaryContactValue.forEach((el) => {
+      if(el === "") {
+        const noVal = 0
+        primaryNumVal.push(noVal)
+      } else {
+        primaryNumVal.push(el)
+      }
+  })
+
+
+
 
   inputRadioName.forEach((e) => {
     const inputChecked = document.querySelector(`input[name="${e}"]:checked`);
@@ -71,7 +85,7 @@
   const FCts = FCtsElem.innerText;
   const para = document.querySelector(".sample");
 
-  basicInputsArr.push(textValue,radioFinalVal,primaryContactValue,FCdetailed,FCts,para,inputText)
+  basicInputsArr.push(textValue,radioFinalVal,primaryNumVal,FCdetailed,FCts,para,inputText,inputRadioName, primaryContact)
 
 
   return basicInputsArr
@@ -81,27 +95,24 @@
 
 
 
-
-
-
-
 //functions
 
 export const fcFunction = () => {
 
   const basicFunction = basicInputs()
-  const textValue = basicFunction[0]
-  const radioFinalVal = basicFunction[1]
+  const textValue = basicFunction[0] //textbox value
+  const radioFinalVal = basicFunction[1] //radiobutton value
   const primaryContactValue = basicFunction[2]
   const FCdetailed = basicFunction[3]
   const FCts = basicFunction[4]
   const para = basicFunction[5]
 
-
+  
   localStorage.setItem("cLocation", textValue[1])
-  localStorage.setItem("SiteAd1", radioFinalVal[0])
-  localStorage.setItem("SiteAd2", radioFinalVal[1])
-  localStorage.setItem("CallerName", textValue[2])
+  localStorage.setItem("siteAd1", radioFinalVal[0])
+  localStorage.setItem("siteAd2", radioFinalVal[1])
+  localStorage.setItem("callerName", textValue[2])
+  localStorage.setItem("altName", textValue[3])
   localStorage.setItem("primeNumber", primaryContactValue[0])
   localStorage.setItem("altNumber", primaryContactValue[1])
   localStorage.setItem("bestTime", textValue[4])
@@ -144,6 +155,16 @@ export const netConn = () => {
   const FCdetailed = basicFunction[3]
   const FCts = basicFunction[4]
   const para = basicFunction[5]
+
+  localStorage.setItem("cLocation", textValue[1])
+  localStorage.setItem("siteAd1", radioFinalVal[0])
+  localStorage.setItem("siteAd2", radioFinalVal[1])
+  localStorage.setItem("callerName", textValue[2])
+  localStorage.setItem("altName", textValue[3])
+  localStorage.setItem("primeNumber", primaryContactValue[0])
+  localStorage.setItem("altNumber", primaryContactValue[1])
+  localStorage.setItem("bestTime", textValue[4])
+  localStorage.setItem("emailAd", textValue[5])
   
   const text = (para.innerText =
 `Subject: ${textValue[0]}\r
@@ -167,5 +188,112 @@ is there any ticket/s opened related to the issue in the past month? ${textValue
 Troubleshooting/Resolution:
 ${FCts}
 Service Advisory Description(If Available):${textValue[8]}`);
+navigator.clipboard.writeText(text);
+};
+
+
+
+export const eodFailedOnPos = () => {
+  const basicFunction = basicInputs()
+  const textValue = basicFunction[0]
+  const radioFinalVal = basicFunction[1]
+  const primaryContactValue = basicFunction[2]
+  const FCdetailed = basicFunction[3]
+  const FCts = basicFunction[4]
+  const para = basicFunction[5]
+
+  localStorage.setItem("cLocation", textValue[1])
+  localStorage.setItem("siteAd1", radioFinalVal[0])
+  localStorage.setItem("siteAd2", radioFinalVal[1])
+  localStorage.setItem("callerName", textValue[2])
+  localStorage.setItem("altName", textValue[3])
+  localStorage.setItem("primeNumber", primaryContactValue[0])
+  localStorage.setItem("altNumber", primaryContactValue[1])
+  localStorage.setItem("bestTime", textValue[4])
+  localStorage.setItem("emailAd", textValue[5])
+  
+  const text = (para.innerText =
+`Subject: ${textValue[0]}\r
+c-Location: ${textValue[1]}\r
+**Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
+**If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+Name of Caller: ${textValue[2]}\r
+Primary Contact Number: ${primaryContactValue[0]}\r
+Alternate Contact Name: ${textValue[3]}\r
+Alternate Contact Number: ${primaryContactValue[1]}\r
+Best time to Call(BTTC): ${textValue[4]}\r
+Email Address(if available): ${textValue[5]}\r
+Detailed Description of the issue:\r
+${FCdetailed}\r
+
+Is there a 'Server Offline' alarm on POS? ${radioFinalVal[2]}\r
+Have they successfully Closed the Shift on the POS? ${radioFinalVal[3]}\r
+
+**If yes, confirm in RSM>POS Management **If no, follow the KB instructions.\r
+Is there any ticket/s opened related to the issue in the past month?\r
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.\r
+
+Troubleshooting/Resolution:
+${FCts}\r
+
+Resolution (what fixed the issue?): ${textValue[6]}\r
+Service Advisory Description (if Available): ${textValue[7]}
+
+Suggested KBAs:
+End of Day (EOD) or End of Shift (EOS) Do Not Print
+POS Report Missing OR No Data To Report
+EOD Device total issue
+End Of Day (EOD) Failure Alert on the POS or Batch In Progress`);
+navigator.clipboard.writeText(text);
+};
+
+
+
+export const fuelPriceChange = () => {
+  const basicFunction = basicInputs()
+  const textValue = basicFunction[0]
+  const radioFinalVal = basicFunction[1]
+  const primaryContactValue = basicFunction[2]
+  const FCdetailed = basicFunction[3]
+  const FCts = basicFunction[4]
+  const para = basicFunction[5]
+
+
+
+  console.log(textValue[8])
+
+  localStorage.setItem("cLocation", textValue[1])
+  localStorage.setItem("siteAd1", radioFinalVal[0])
+  localStorage.setItem("siteAd2", radioFinalVal[1])
+  localStorage.setItem("callerName", textValue[2])
+  localStorage.setItem("altName", textValue[3])
+  localStorage.setItem("primeNumber", primaryContactValue[0])
+  localStorage.setItem("altNumber", primaryContactValue[1])
+  localStorage.setItem("bestTime", textValue[4])
+  localStorage.setItem("emailAd", textValue[5])
+  
+  console.log(para)
+  const text = (para.innerText =
+`Subject: ${textValue[0]}\r
+c-Location: ${textValue[1]}\r
+**Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
+**If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+Name of Caller: ${textValue[2]}\r
+Primary Contact Number: ${primaryContactValue[0]}\r
+Alternate Contact Name: ${textValue[3]}\r
+Alternate Contact Number: ${primaryContactValue[1]}\r
+Best time to Call(BTTC): ${textValue[4]}\r
+Email Address(if available): ${textValue[5]}\r
+Detailed Description of the issue:\r
+${FCdetailed}\r
+What time did the issue occur: ${textValue[6]}\r
+What Fuel Grades are impacted: ${textValue[7]}\r
+Can the site change the prices manually through RSM/POS? ${radioFinalVal[2]}
+Did they check for BOS offline or server offline message? ${radioFinalVal[3]}
+(if this is the case they should be following the server offline KB)
+Troubleshooting (steps done to resolve the issue):
+${FCts}\r
+Resolution (what fixed the issue?): ${textValue[8]}\r
+Service Advisory Description (if Available): ${textValue[9]}`);
 navigator.clipboard.writeText(text);
 };
