@@ -2240,6 +2240,7 @@ export function newIssueFunct() {
           const siteAd1 = localStorage.getItem("siteAd1")
           const siteAd2 = localStorage.getItem("siteAd2")
           const callerName = localStorage.getItem("callerName")
+          const altName = localStorage.getItem("altName")
           const bestTime = localStorage.getItem("bestTime")
           const emailAd = localStorage.getItem("emailAd")
           const primeNum = localStorage.getItem("primeNumber")
@@ -2254,7 +2255,7 @@ export function newIssueFunct() {
               })
               inputTextVal[1].value = cLocation //cLocation
               inputTextVal[2].value = callerName // callerName
-              inputTextVal[3].value = callerName //alternative name
+              inputTextVal[3].value = altName //alternative name
               inputTextVal[4].value = bestTime // Best time to call
               inputTextVal[5].value = emailAd // Email Add
               
