@@ -593,20 +593,20 @@ c-Location: ${textValue[1]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
-Alternate Contact Name: ${textValue[2]}\r
+Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
-Best time to Call(BTTC): ${textValue[3]}\r
-Email Address(if available): ${textValue[4]}\r
+Best time to Call(BTTC): ${textValue[4]}\r
+Email Address(if available): ${textValue[5]}\r
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 Troubleshooting/resolution:
 ${textTS}
-Resolution (what fixed the issue?): ${textValue[5]}
+Resolution (what fixed the issue?): ${textValue[6]}
 Business Impact Prioritization:
 1. Can the site process any transactions in the POS? If no, set case to P2
 2. Can the site process any transactions in the Pumps?If no, set case to P2
-3.Is the site hard down (unable to transact both in the POS Pumps? If yes, set case to P2
-Service Advisory Description (if Available):${textValue[6]}`);
+3. Is the site hard down (unable to transact both in the POS Pumps? If yes, set case to P2
+Service Advisory Description (if Available):${textValue[7]}`);
 navigator.clipboard.writeText(text);
 };
 
