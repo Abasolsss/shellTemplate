@@ -10,17 +10,34 @@ body {
     white-space:inherit;
 }
 
-textarea.form-control {
+ p {
+    margin: 0;
+ }
+
+ ul li {
+    list-style-type: none;
+ }
+
+.test {
     position: sticky;
     top: 0;
+    display: block;
+    text-align: center;
+}
+.info {
+    text-align: start;
 }
 
-.col-4 {
+#resetBTN {
+    margin: 1rem;
+}
+/* .col-4 {
     display: flex;
     height: 100vh;
     justify-content: center;
     align-items: center;
-}
+} */
+
 .modals {
     padding: 0 !important;
     overflow: scroll !important;
