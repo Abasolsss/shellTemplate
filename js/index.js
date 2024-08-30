@@ -5,12 +5,45 @@ const templateSelect = document.getElementById("templateSelector");
 
 const newIssueSelect = document.getElementById("newIssueSelector")
 
-
 templateValueFunct();
 newIssueFunct();
+// bordeline
+const weatherDiv = document.querySelector(".weatherDiv")
+
+const APIKey = "60f06bb755213c4c8e5887d8f7b59046"
+const url = `https://api.openweathermap.org/data/2.5/weather?q=cebu&units=metric&appid=${APIKey}`
+
+const apiFetch = fetch(url)
+
+weatherDiv.innerHTML = 
+`
+<p>Loading the weather for todays video....</p>
+`
+apiFetch.then(response => {
+  return response.json()
+})
+.then(value => {
+  weatherFunction(value)
+})
+.catch((error) => console.error(error))
+
+const weatherFunction = (val) => {
+const iconSrc = `http://openweathermap.org/img/w/${val.weather[0].icon}.png`
+  const loadTime = setTimeout(() => {
+    weatherDiv.innerHTML = 
+    `
+    <h5>${val.sys.country} | ${val.name}</h5>
+    <h5>Weather for todays video: ${val.weather[0].main}, ${val.weather[0].description}</h5>
+    <h5>${val.main.feels_like}°C <img src = "${iconSrc}"></h5>
+    `
+  }, 3000);
+}
 
 
-// new issue
+//random qoutes
+
+
+// new issueK
 if (newIssueSelect) {
   newIssueSelect.addEventListener("change", (e) => {
     const selectedTemplate = e.currentTarget.value;

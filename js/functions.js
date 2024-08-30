@@ -136,16 +136,20 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 Is there any recent POS upgrade? ${radioFinalVal[2]} \r
 Type of Fuel Controller: ${textValue[6]}\r
 is the Fuel Controller available on SMTOOLS? ${radioFinalVal[3]}\r
 is there power in the pump/fuel dispenser? ${radioFinalVal[4]}\r
 is the power cable properly connected? ${radioFinalVal[5]}\r
 Emergency Alarm Reset? ${radioFinalVal[6]}\r
+
 Troubleshooting/Resolution:\r
 ${textTS}
+
 Service Advisory Description (If Available): ${textValue[7]}\r
 Suggested KBA: All Pumps Down - (Fuel Controller Offline`);
 
@@ -184,16 +188,20 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 **If yes, please note the cutover date from the RTM sites file: ${textValue[6]}\r
 is the site offline on toolset? ${radioFinalVal[2]}\r
 Cybera Status A in red? ${radioFinalVal[3]}\r
 Is the network cable/s properly connected? ${radioFinalVal[4]}\r
 Power cycled the modem? ${radioFinalVal[5]}\r
 is there any ticket/s opened related to the issue in the past month? ${textValue[7]}\r
+
 Troubleshooting/Resolution:
 ${textTS}
+
 Service Advisory Description(If Available):${textValue[8]}`);
 navigator.clipboard.writeText(text);
 };
@@ -230,6 +238,7 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
@@ -244,6 +253,7 @@ Troubleshooting/Resolution:
 ${textTS}\r
 
 Resolution (what fixed the issue?): ${textValue[6]}\r
+
 Service Advisory Description (if Available): ${textValue[7]}
 
 Suggested KBAs:
@@ -287,15 +297,19 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 What time did the issue occur: ${textValue[6]}\r
 What Fuel Grades are impacted: ${textValue[7]}\r
 Can the site change the prices manually through RSM/POS? ${radioFinalVal[2]}
 Did they check for BOS offline or server offline message? ${radioFinalVal[3]}
 (if this is the case they should be following the server offline KB)
+
 Troubleshooting/Resolution:
 ${textTS}\r
+
 Resolution (what fixed the issue?): ${textValue[8]}\r
 Service Advisory Description (if Available): ${textValue[9]}`);
 navigator.clipboard.writeText(text);
@@ -334,8 +348,10 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 If the site is calling in about Site Facilities related issues (air conditioning, fridge, potholes, front door issue, vapor alarm, site safe, price pole, camera system, printer paper roll, alarms, broken pump host, etc.)
 
 Is there any ticket/s opened related to the issue in the past month? **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
@@ -382,6 +398,7 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
@@ -434,8 +451,10 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 Are all electronic payments not working? ${radioFinalVal[2]}
 **If no, is debit/credit working inside? ${radioFinalVal[3]}
 **Is debit/credit working outside? ${radioFinalVal[4]}
@@ -446,8 +465,10 @@ Is EPC powered on? ${radioFinalVal[7]}
 Is there any ticket/s opened related to the issue in the past month? **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
 
 Resolution (what fixed the issue?): ${textValue[6]}
+
 Troubleshooting/resolution:
 ${textTS}
+
 Service Advisory Description (if Available):${textValue[7]}
 Suggested KBA:
 Electronic Payment Out of Order- EPC4`);
@@ -484,8 +505,10 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 Is this a POS or PDI scanner? ${textValue[6]}
 **If POS, check the following:
 Are all items not scanning? ${radioFinalVal[2]}
@@ -501,10 +524,14 @@ Are there any related tickets opened for the same device in the past month? **If
 Model/Device Type: ${textValue[10]}
 Error Message/s (if applicable) ${textValue[11]}
 Have you tried programming the scanner? ${textValue[12]}
+
 Troubleshooting/resolution:
 ${textTS}
+
 Resolution (what fixed the issue?): ${textValue[13]}
+
 Service Advisory Description (if Available):${textValue[14]}
+
 Suggested KBA:
 POS Scanner Unable to Scan (Xenon 1902)
 PDI Handheld Scanner not Working`);
@@ -542,8 +569,10 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 Card type used and last 4 digits (if available): ${textValue[6]}
 Transaction Amount/Date/Time:${textValue[7]}
 Affected device/s: ${textValue[8]}
@@ -557,7 +586,9 @@ Troubleshooting/resolution:
 ${textTS}
 
 Resolution (what fixed the issue?): ${textValue[13]}
+
 Service Advisory Description (if Available):${textValue[14]}
+
 Suggested KBA:
 Receipt Issues and Inquiries for POS or Pumps
 POS Receipt Printer Not Functioning
@@ -597,15 +628,20 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 Troubleshooting/resolution:
 ${textTS}
+
 Resolution (what fixed the issue?): ${textValue[6]}
+
 Business Impact Prioritization:
 1. Can the site process any transactions in the POS? If no, set case to P2
 2. Can the site process any transactions in the Pumps?If no, set case to P2
 3. Is the site hard down (unable to transact both in the POS Pumps? If yes, set case to P2
+
 Service Advisory Description (if Available):${textValue[7]}`);
 navigator.clipboard.writeText(text);
 };
@@ -636,12 +672,17 @@ c-Location: ${textValue[1]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 Are you able to successfully warm transferred the tech to the site? ${radioFinalVal[2]}
+
 **If no, state the reason why:
 ${textTS}
-Service Advisory Description (if Available):${textValue[6]}
+
+Service Advisory Description (if Available):${textValue[3]}
+
 Suggested KBA:
 GoCo Tech Calling for L1 Troubleshooting with Site`);
 navigator.clipboard.writeText(text);
@@ -678,17 +719,22 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 How many pump(s) is/are affected? ${textValue[6]}
 Is Debit/Credit working inside? ${radioFinalVal[2]}
 Is Debit/Credit working on other pumps? ${radioFinalVal[3]}
 what is the error message on the ICR? ${textValue[7]}
 Able to ping the ICR? ${textValue[8]}
 Reviewed transaction journal for issue verification? ${textValue[9]}
+
 Troubleshooting/resolution:
 ${textTS}
+
 Service Advisory Description (if Available):${textValue[10]}
+
 Suggested KBA:
 PAP not working at specific ICR's - Gen 5 Card Reader`);
 navigator.clipboard.writeText(text);
@@ -724,15 +770,20 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 How many pump(s) is/are affected? ${textValue[6]}
 If DO/GBW: Contact their Pump Maintenance Contractor.
 If MBA/CMA/RBA site, call BGIS at 1-866-449-2355.
 Are there any related tickets opened for the same pump/s in the past month? **If yes, note the case number/s for reference.
+
 Troubleshooting/resolution:
 ${textTS}
+
 Service Advisory Description (if Available):${textValue[7]}
+
 Suggested KBA:
 PAP not working at specific ICR's - Gen 5 Card Reader`);
 navigator.clipboard.writeText(text);
@@ -769,8 +820,10 @@ Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
+
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
 1.How many POS do the site have? ${textValue[6]}
 2.Which POS is/are freezing (POS1, POS2, POS3)? ${textValue[7]}
 3.Did the site experience this before? When was the last time? ${textValue[8]}
@@ -780,9 +833,12 @@ ${FCdetailed}\r
 **Check the following from Salesforce:
 1. Previous cases opened related to the freezing issue.
 2. Gather what was done previous to resolve the issue.
+
 Troubleshooting/resolution:
 ${textTS}
+
 Service Advisory Description (if Available):${textValue[11]}
+
 Suggested KBA:
 POS Freezing (One or Multiple)`);
 navigator.clipboard.writeText(text);

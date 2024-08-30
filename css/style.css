@@ -10,6 +10,12 @@ body {
     white-space:inherit;
 }
 
+.ip-ad {
+    margin-block: 0.625rem;
+}
+.weatherDiv {
+    padding-inline: 0.625rem;
+}
  p {
     margin: 0;
  }
@@ -17,6 +23,22 @@ body {
  ul li {
     list-style-type: none;
  }
+ .navbars {
+    display: flex;
+    align-items: center;
+    padding-inline: 0.325rem;
+ }
+ .tenor-gif-embed {
+    padding: 50px;
+ }
+
+ /* .navbar {
+    position: sticky;
+    top: 0;
+    display: block;
+    text-align: center;
+    z-index: -99999;
+} */
 
 .test {
     position: sticky;
@@ -72,4 +94,8 @@ label {
 
 .color {
     color: aqua;
+}
+
+.info ul li {
+    margin: 0.625rem;
 }
