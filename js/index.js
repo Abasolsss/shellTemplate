@@ -34,14 +34,15 @@ const iconSrc = `http://openweathermap.org/img/w/${val.weather[0].icon}.png`
     `
     <h5>${val.sys.country} | ${val.name}</h5>
     <h5>Weather for todays video: ${val.weather[0].main}, ${val.weather[0].description}</h5>
-    <h5>${val.main.feels_like}°C <img src = "${iconSrc}"></h5>
+    <h5>${val.main.temp}°C <img src = "${iconSrc}"></h5>
     `
   }, 3000);
+
+  console.log(val)
 }
 
 
 //random qoutes
-
 
 // new issueK
 if (newIssueSelect) {
