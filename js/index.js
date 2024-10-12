@@ -11,14 +11,16 @@ newIssueFunct();
 const weatherDiv = document.querySelector(".weatherDiv")
 
 const APIKey = "60f06bb755213c4c8e5887d8f7b59046"
-const url = `https://api.openweathermap.org/data/2.5/weather?q=cebu&units=metric&appid=${APIKey}`
+const url = `https://api.openweathermap.org/data/2.5/weather?q=lahug&units=metric&appid=${APIKey}`
 
 const apiFetch = fetch(url)
 
 weatherDiv.innerHTML = 
 `
 <p>Loading the weather for todays video....</p>
+
 `
+
 apiFetch.then(response => {
   return response.json()
 })
@@ -29,16 +31,17 @@ apiFetch.then(response => {
 
 const weatherFunction = (val) => {
 const iconSrc = `http://openweathermap.org/img/w/${val.weather[0].icon}.png`
+const roundUp = Math.ceil(val.main.temp)
   const loadTime = setTimeout(() => {
     weatherDiv.innerHTML = 
     `
     <h5>${val.sys.country} | ${val.name}</h5>
     <h5>Weather for todays video: ${val.weather[0].main}, ${val.weather[0].description}</h5>
-    <h5>${val.main.temp}°C <img src = "${iconSrc}"></h5>
+    <h5>${roundUp}°C <img src = "${iconSrc}"></h5>
     `
   }, 3000);
 
-  console.log(val)
+  // console.log(val)
 }
 
 
@@ -211,6 +214,9 @@ resetBtn.addEventListener("click", () => {
     } else if (result.isDenied) {
       Swal.fire('Resetting template cancelled', '', 'info')
     }
-  })
+  }) 
 })
+
+
+
 

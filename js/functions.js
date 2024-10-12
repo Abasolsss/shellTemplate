@@ -475,6 +475,11 @@ Electronic Payment Out of Order- EPC4`);
 navigator.clipboard.writeText(text);
 };
 
+// - Run connectivity Lan to ping the ICR
+// - Upon checking the ICR was pinged successfully, please check the image on case details
+// - As per S/A the pump 3 and 4 is not taking any PAP
+// - As per checking on sm tools the ICR is online
+
 
 export const scannerNotWorking = () => {
   const basicFunction = basicInputs()
@@ -723,17 +728,33 @@ Email Address(if available): ${textValue[5]}\r
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
-How many pump(s) is/are affected? ${textValue[6]}
-Is Debit/Credit working inside? ${radioFinalVal[2]}
-Is Debit/Credit working on other pumps? ${radioFinalVal[3]}
-what is the error message on the ICR? ${textValue[7]}
-Able to ping the ICR? ${textValue[8]}
-Reviewed transaction journal for issue verification? ${textValue[9]}
+Error message encountered(screenshot required): ${textValue[6]}
 
 Troubleshooting/resolution:
 ${textTS}
 
-Service Advisory Description (if Available):${textValue[10]}
+
+What type of transactions are getting affected? ${textValue[7]}
+Was it working before?  ${radioFinalVal[2]}
+**if yes, from when did it stopped working? ${textValue[8]}
+Was the ICR been replaced?(Y/N) ${radioFinalVal[3]}
+**if ICR was replaced, is credit working on those pumps? ${textValue[9]}
+Was the Fuel Controller been replaced recently? ${radioFinalVal[4]}
+If non of them are working, document the error: ${textValue[10]}
+
+How many pump(s) is/are affected? ${textValue[11]}
+Is Debit/Credit working inside? ${radioFinalVal[5]}
+Is Debit/Credit working on other pumps? ${radioFinalVal[6]}
+what is the error message on the ICR? ${textValue[12]}
+Able to ping the ICR? ${textValue[13]}
+Reviewed transaction journal for issue verification? ${textValue[14]}
+
+Is there any ticket/s opened related to the issue in the past month?
+**if yes, note the case number/s and raise to L1.5/L2 for further investigation
+
+**if the issue is resolved, input the details of what fixed the issue on the Resolution Notes
+
+Service Advisory Description (if Available):${textValue[15]}
 
 Suggested KBA:
 PAP not working at specific ICR's - Gen 5 Card Reader`);
@@ -785,7 +806,8 @@ ${textTS}
 Service Advisory Description (if Available):${textValue[7]}
 
 Suggested KBA:
-PAP not working at specific ICR's - Gen 5 Card Reader`);
+Pump Offline(One or Multiple)
+Pump Issue - Tech on Site`);
 navigator.clipboard.writeText(text);
 };
 

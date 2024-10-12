@@ -10,8 +10,25 @@ body {
     white-space:inherit;
 }
 
+.row {
+    width: 100%;
+}
+
+.qoute h2 {
+    font-size: 1.25rem;
+}
+
 .ip-ad {
     margin-block: 0.625rem;
+    height: 300px;
+    width: 350px;
+    display: flex;
+}
+
+.ip-ad img {
+    height: 100%;
+    width: 100%;
+
 }
 .weatherDiv {
     padding-inline: 0.625rem;
@@ -88,8 +105,9 @@ label {
     margin:6px 0px;
 }
 
-/* #textArea {
-    display: none;
+/* .textArea {
+    position: sticky;
+    top:0;
 } */
 
 .color {

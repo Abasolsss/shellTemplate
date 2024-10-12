@@ -1817,14 +1817,60 @@ export const array = [
            contenteditable="true"
          ></div>
 
-
       <label for="">
-         How many pump(s) is/are affected?
+      Error message encountered(screenshot required):
          <input type="text" name="" id="" />
        </label>
 
-       <span>
-        Is Debit/Credit working inside?
+
+         <label for="">Troubleshooting/Resolution:</label>
+          <div id="FCts" class="container-fluid" contenteditable="true"></div>
+
+
+      <label for="">
+        What type of transactions are getting affected?
+         <input type="text" name="" id="" />
+       </label>
+
+        <span>
+       Was it working before? 
+         <label>
+           Yes
+           <input type="radio" name="SAradio1" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio1" value="No" />
+         </label>
+       </span>
+
+       <label for="">
+       **if yes, from when did it stopped working?
+         <input type="text" name="" id="" />
+       </label>
+
+        <span>
+          Was the ICR been replaced?
+         <label>
+           Yes
+           <input type="radio" name="SAradio2" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio2" value="No" />
+         </label>
+       </span>
+
+        <label for="">
+       **if ICR was replaced, is credit working on those pumps?
+         <input type="text" name="" id="" />
+       </label>
+
+
+        <span>
+         Was the Fuel Controller been replaced recently?
          <label>
            Yes
            <input type="radio" name="SAradio3" value="Yes" />
@@ -1836,8 +1882,19 @@ export const array = [
          </label>
        </span>
 
+         <label for="">
+       If non of them are working, document the error:
+         <input type="text" name="" id="" />
+       </label>
+
+    
+      <label for="">
+         How many pump(s) is/are affected?
+         <input type="text" name="" id="" />
+       </label>
+
        <span>
-       Is Debit/Credit working on other pumps?
+        Is Debit/Credit working inside?
          <label>
            Yes
            <input type="radio" name="SAradio4" value="Yes" />
@@ -1846,6 +1903,19 @@ export const array = [
          <label>
            No
            <input type="radio" name="SAradio4" value="No" />
+         </label>
+       </span>
+
+       <span>
+       Is Debit/Credit working on other pumps?
+         <label>
+           Yes
+           <input type="radio" name="SAradio5" value="Yes" />
+         </label>
+
+         <label>
+           No
+           <input type="radio" name="SAradio5" value="No" />
          </label>
        </span>
 
@@ -1870,8 +1940,7 @@ export const array = [
         </p>
 
 
-        <label for="">Troubleshooting/Resolution:</label>
-          <div id="FCts" class="container-fluid" contenteditable="true"></div>
+        
 
         <div class="sample" contenteditable="true"></div>
 
