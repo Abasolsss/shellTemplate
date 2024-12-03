@@ -64,6 +64,8 @@ export const array = [
             </label>
           </span>
 
+          <p>TMPL-FC</p>
+
           <label for="">
             Name of Caller:
             <input type="text" name="" id="" />
@@ -116,13 +118,9 @@ export const array = [
             </label>
           </span>
 
-          <label for="">
-            Type of Fuel Controller:
-            <input type="text" name="" id="" />
-          </label>
 
-          <span>
-            is the Fuel Controller available on SMTOOLS?
+           <span>
+            Is there power in the pumps/fuel dispensers?
             <label>
               Yes
               <input type="radio" name="SAradio4" value="Yes" />
@@ -134,21 +132,13 @@ export const array = [
             </label>
           </span>
 
-          <span>
-            is there power in the pump/fuel dispenser?
-            <label>
-              Yes
-              <input type="radio" name="SAradio5" value="Yes" />
-            </label>
-
-            <label>
-              No
-              <input type="radio" name="SAradio5" value="No" />
-            </label>
-          </span>
+         <label for="">
+           How many pumps fuel dispensers are impacted?
+            <input type="text" name="" id="" />
+          </label>
 
           <span>
-            is the power cable properly connected
+            is the Fuel Controller available on SMTOOLS?
             <label>
               Yes
               <input type="radio" name="SAradio6" value="Yes" />
@@ -160,8 +150,17 @@ export const array = [
             </label>
           </span>
 
-          <span>
-            Emergency Alarm Reset?
+          <p>**If yes, attempt to do remote reset.</p>
+          <p>**If no, follow the KB instructions.</p>
+
+
+          <label for="">
+            Type of Fuel Controller:
+            <input type="text" name="" id="" />
+          </label>
+
+       <span>
+         Is the emergency stop button pressed?
             <label>
               Yes
               <input type="radio" name="SAradio7" value="Yes" />
@@ -171,21 +170,40 @@ export const array = [
               No
               <input type="radio" name="SAradio7" value="No" />
             </label>
-          </span>
+        </span>
+
+        <p>**If yes, follow site safety procedures.</p>
+        
+
+        <span>
+         Is there any ticket/s opened related to the issue in the past month?
+            <label>
+              Yes
+              <input type="radio" name="SAradio8" value="Yes" />
+            </label>
+
+            <label>
+              No
+              <input type="radio" name="SAradio8" value="No" />
+            </label>
+        </span>
+
+        
+        <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
 
           <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
 
           <label>
-            Service Advisory Description (If Available):
+          If the issue got fixed, what resolved the issue?
             <input type="text" name="" />
           </label>
 
-          <span>
-            Suggested KBA: All Pumps Down - (Fuel Controller Offline)
-          </span>
+          <label>
+          If the issue is not fixed, what is the next step?
+            <input type="text" name="" />
+          </label>
 
-       
 
           <div class="sample" contenteditable="true"></div>
 
@@ -248,6 +266,8 @@ export const array = [
           </label>
         </span>
 
+        <p>TMPL-NetConn</p>
+
         <label for="">
           Name of Caller:
           <input type="text" name="" id="" />
@@ -286,77 +306,113 @@ export const array = [
             class="container-fluid"
             contenteditable="true"
           ></div>
-          <label>
-            **If yes, please note the cutover date from the RTM sites file:
-            <input type="text" name="" />
-          </label>
-          <span>
-            Is the site offline on toolset?
-            <label>
-              Yes
-              <input type="radio" name="SAradio3" value="Yes" />
-            </label>
+       
+    
+    <span>
+    Is the site able to process transactions from POS and or Pumps?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
 
-            <label>
-              No
-              <input type="radio" name="SAradio3" value="No" />
-            </label>
-          </span>
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+    
+     <span>
+    Is this an RTM site?
+      <label>
+        Yes
+        <input type="radio" name="SAradio4" value="Yes" />
+      </label>
 
-          <span>
-            Cybera Status A in red?
-            <label>
-              Yes
-              <input type="radio" name="SAradio4" value="Yes" />
-            </label>
-
-            <label>
-              No
-              <input type="radio" name="SAradio4" value="No" />
-            </label>
-          </span>
-
-          <span>
-            Is the network cable/s properly connected?
-            <label>
-              Yes
-              <input type="radio" name="SAradio5" value="Yes" />
-            </label>
-
-            <label>
-              No
-              <input type="radio" name="SAradio5" value="No" />
-            </label>
-          </span>
+      <label>
+        No
+        <input type="radio" name="SAradio4" value="No" />
+      </label>
+    </span>
 
 
-          <span>
-            Power cycled the modem.
-            <label>
-              Yes
-              <input type="radio" name="SAradio6" value="Yes" />
-            </label>
+     <label>
+        **If yes, please note the cutover date from the RTM sites file:
+        <input type="text" name="" />
+      </label>
+    
+  <span>
+   Is the site offline on toolset?
+      <label>
+        Yes
+        <input type="radio" name="SAradio5" value="Yes" />
+      </label>
 
-            <label>
-              No
-              <input type="radio" name="SAradio6" value="No" />
-            </label>
-          </span>
+      <label>
+        No
+        <input type="radio" name="SAradio5" value="No" />
+      </label>
+    </span>
+
+    <p>Check the status of the devices.</p>
+
+    <p>** if RTM, check Meraki and VMware</p>
+
+    <p>** if non-RTM, check the Cybera</p>
+
+ <span>
+   Is the network cable/s properly connected?
+      <label>
+        Yes
+        <input type="radio" name="SAradio6" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio6" value="No" />
+      </label>
+    </span>
 
 
-          <label>
-            Is there any ticket/s opened related to the issue in the past month?
-            <input type="text" name="" />
-          </label>
+  <span>
+   Was the modem Power cycled?
+      <label>
+        Yes
+        <input type="radio" name="SAradio7" value="Yes" />
+      </label>
 
-          <label for="">**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</label>
+      <label>
+        No
+        <input type="radio" name="SAradio7" value="No" />
+      </label>
+    </span>
+
+
+<span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio8" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio8" value="No" />
+      </label>
+    </span>
+
+         <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
 
           <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
           
 
           <label>
-            Service Advisory Description (If Available):
+            If the issue got fixed, what resolved the issue?
+            <input type="text" name="" />
+          </label>
+
+            <label>
+            If the issue is not fixed, what is the next step?
             <input type="text" name="" />
           </label>
 
@@ -420,6 +476,8 @@ export const array = [
            <input type="radio" name="SAradio2" value="No" />
          </label>
        </span>
+
+      <p>TMPL-EODFailed</p>
 
        <label for="">
          Name of Caller:
@@ -491,9 +549,19 @@ export const array = [
         **If no, follow the KB instructions.
       </p>
 
-      <p>
-        Is there any ticket/s opened related to the issue in the past month?
-      </p>
+  
+  <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio5" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio5" value="No" />
+      </label>
+    </span>
 
       <p>
         **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
@@ -502,27 +570,16 @@ export const array = [
        <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
 
-          <label for="">
-            Resolution (what fixed the issue?):
+        <label for="">
+         If the issue got fixed, what resolved the issue?
             <input type="text" name="" id="" />
           </label>
 
-
-
-           <label for="">
-            ﻿Service Advisory Description (if Available):
+        <label for="">
+         IIf the issue is not fixed, what is the next step?
             <input type="text" name="" id="" />
-          </label>
+        </label>
 
-      
-      <p>
-        Suggested KBAs:<br/>
-        End of Day (EOD) or End of Shift (EOS) Do Not Print<br/>
-        POS Report Missing OR No Data To Report<br/>
-        EOD Device total issue<br/>
-        End Of Day (EOD) Failure Alert on the POS or Batch In Progress<br/>
-    </p>
-  
 
          <div class="sample" contenteditable="true"></div>
 
@@ -583,6 +640,8 @@ export const array = [
            <input type="radio" name="SAradio2" value="No" />
          </label>
        </span>
+
+       <p>TMPL-FuelPrice</p>
 
        <label for="">
          Name of Caller:
@@ -669,20 +728,35 @@ export const array = [
         <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
 
-          
-           <label for="">
-           Resolution (what fixed the issue?):
+      
+      <span>
+      Is there any ticket/s opened related to the issue in the past month?
+        <label>
+          Yes
+          <input type="radio" name="SAradio5" value="Yes" />
+        </label>
+
+        <label>
+          No
+          <input type="radio" name="SAradio5" value="No" />
+        </label>
+      </span>
+
+      <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
+
+      <label for="">
+         If the issue got fixed, what resolved the issue?
             <input type="text" name="" id="" />
-          </label>
-          
-    <label for="">
-      Service Advisory Description (if Available):
-         <input type="text" name="" id="" />
-    </label>
+        </label>
+
+        <label for="">
+         If the issue is not fixed, what is the next step?
+            <input type="text" name="" id="" />
+        </label>
 
       <div class="sample" contenteditable="true"></div>
 
-  
+
 
        <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -743,6 +817,14 @@ export const array = [
          </label>
        </span>
 
+      <label>
+       **Service Advisory Description (if Available):
+         <input type="text" name="" />
+       </label>
+
+
+       <p>TMPL-SiteFac</p>
+
        <label for="">
          Name of Caller:
          <input type="text" name="" id="" />
@@ -789,9 +871,22 @@ export const array = [
           If the site is calling in about Site Facilities related issues (air conditioning, fridge, potholes, front door issue, vapor alarm, site safe, price pole, camera system, printer paper roll, alarms, broken pump host, etc.)
          </p>
 
-         <p>
-          Is there any ticket/s opened related to the issue in the past month?
 
+  <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+
+
+         <p>
           **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
         </p>
 
@@ -867,6 +962,8 @@ export const array = [
          </label>
        </span>
 
+       <p>TMPL-PosERRmsg</p>
+
        <label for="">
          Name of Caller:
          <input type="text" name="" id="" />
@@ -930,8 +1027,21 @@ export const array = [
          <input type="text" name="" id=""/>
        </label>
 
+
+    <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+
        <p>
-        Is there any ticket/s opened related to the issue in the past month?
         **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
        </p>
 
@@ -942,13 +1052,15 @@ export const array = [
         <div class="sample" contenteditable="true"></div>
 
        <label for="">
-        Service Advisory Description (If Available):
+          If the issue got fixed, what resolved the issue?
          <input type="text" name="" id="" />
        </label>
 
+        <label for="">
+          If the issue is not fixed, what is the next step?
+         <input type="text" name="" id="" />
+       </label>
 
-        <span style="font-weight: bold;">Suggested KBA:</span>
-        <p>Shell - POS Alarms and Notifications</p>
 
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -973,7 +1085,7 @@ export const array = [
   {
     templateName: "electronicPaymentOutOfOrder",
     template: `
-      <h1>Electronic Payment Out OF Order</h1>
+      <h1>Electronic Payment Out Of Order</h1>
       <label>
          Subject:
          <input type="text" name="" />
@@ -1009,6 +1121,8 @@ export const array = [
            <input type="radio" name="SAradio2" value="No" />
          </label>
        </span>
+
+      <p>TMPL-EPC</p>
 
        <label for="">
          Name of Caller:
@@ -1133,12 +1247,21 @@ export const array = [
          </label>
        </span>
 
-       <p>
-        Is there any ticket/s opened related to the issue in the past month?
 
-        **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
-       </p>
+    <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio2" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio2" value="No" />
+      </label>
+    </span>
        
+    <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
 
 
         <label for="">Troubleshooting/Resolution:</label>
@@ -1146,18 +1269,17 @@ export const array = [
 
         <div class="sample" contenteditable="true"></div>
         
-      <label for="">
-        Resolution (what fixed the issue?):
-         <input type="text" name="" id="" />
-       </label>
 
       <label for="">
-        Service Advisory Description (If Available):
-         <input type="text" name="" id="" />
-       </label>
+         If the issue got fixed, what resolved the issue?
+            <input type="text" name="" id="" />
+        </label>
 
-        <span style="font-weight: bold;">Suggested KBA:</span>
-        <p>Electronic Payment Out of Order- EPC4</p>
+        <label for="">
+         If the issue is not fixed, what is the next step?
+            <input type="text" name="" id="" />
+        </label>
+
 
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -1219,6 +1341,13 @@ export const array = [
        </span>
 
        <label for="">
+       **Service Advisory Description (if Available):
+         <input type="text" name="" id="" />
+       </label>
+       
+      <p>TMPL-SCANNER</p>
+
+      <label for="">
          Name of Caller:
          <input type="text" name="" id="" />
        </label>
@@ -1296,7 +1425,20 @@ export const array = [
 
        <p>*If PDI, check the KB article for specific instructions.</p>
 
-       <p>Are there any related tickets opened for the same device in the past month?
+    <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio4" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio4" value="No" />
+      </label>
+    </span>
+
+       <p>
        **If yes, note the case number/s and raise to L2 for possible replacement</p>
 
        <label for="">
@@ -1318,22 +1460,19 @@ export const array = [
         <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
 
-
-       <label for="">
-          Resolution (what fixed the issue?):
-         <input type="text" name="" id="" />
-       </label>
-
         <div class="sample" contenteditable="true"></div>
 
-         <label for="">
-        Service Advisory Description (If Available):
-         <input type="text" name="" id="" />
-       </label>
+        <label for="">
+         If the issue got fixed, what resolved the issue?
+            <input type="text" name="" id="" />
+          </label>
 
-        <span style="font-weight: bold;">Suggested KBA:</span>
-        <p>POS Scanner Unable to Scan (Xenon 1902)</p>
-        <p>PDI Handheld Scanner not Working</p>
+        <label for="">
+         If the issue is not fixed, what is the next step?
+            <input type="text" name="" id="" />
+        </label>
+
+
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
        
@@ -1393,6 +1532,8 @@ export const array = [
            <input type="radio" name="SAradio2" value="No" />
          </label>
        </span>
+
+       <p>TMPL-RcptIssue</p>
 
        <label for="">
          Name of Caller:
@@ -1461,34 +1602,39 @@ export const array = [
          <input type="text" name="" id=""/>
        </label>
 
-      <p>
-        Is there any ticket/s opened related to the issue in the past month?
 
+  <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+
+      <p>
         **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
       </p>
 
         <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
 
-      <label for="">
-         Resolution (what fixed the issue?):
-         <input type="text" name="" id=""/>
-       </label>
-
         <div class="sample" contenteditable="true"></div>
 
-     
-
+    
       <label for="">
-        Service Advisory Description (If Available):
-         <input type="text" name="" id="" />
+         If the issue got fixed, what resolved the issue?
+            <input type="text" name="" id="" />
       </label>
 
-   <span style="font-weight: bold;">Suggested KBA:</span>
-        <p>Receipt Issues and Inquiries for POS or Pumps</p>
-        <p>POS Receipt Printer Not Functioning</p>
-        <p>Safe Drop Receipt Not Printing on POS</p>
-        <p>Shell - RLM SCAN Receipt printer issue</p>
+      <label for="">
+         If the issue is not fixed, what is the next step?
+            <input type="text" name="" id="" />
+      </label>
 
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -1549,6 +1695,8 @@ export const array = [
          </label>
        </span>
 
+       <p>TMPL-Generic</p>
+
        <label for="">
          Name of Caller:
          <input type="text" name="" id="" />
@@ -1593,10 +1741,30 @@ export const array = [
         <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
 
-       <label for="">
-        Resolution:
-         <input type="text" name="" id="" />
-       </label>
+    <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+
+    <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
+
+      <label for="">
+        If the issue got fixed, what resolved the issue?
+            <input type="text" name="" id="" />
+      </label>
+
+      <label for="">
+      If the issue is not fixed, what is the next step?
+            <input type="text" name="" id="" />
+      </label>
     
        Business Impact Prioritization:<br/>
       <p>1. Can the site process any transactions in the POS? If no, set case to P2</p>
@@ -1604,10 +1772,7 @@ export const array = [
       <p>3.Is the site hard down (unable to transact both in the POS Pumps? If yes, set case to P2</p>
 
         <div class="sample" contenteditable="true"></div>
-      <label for="">
-        Service Advisory Description (If Available):
-         <input type="text" name="" id="" />
-       </label>
+  
 
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -1667,6 +1832,9 @@ export const array = [
            <input type="radio" name="SAradio2" value="No" />
          </label>
        </span>
+    
+       <p>TMPL-GOCO</p>
+
 
        <label for="">
          Name of Caller:
@@ -1776,6 +1944,8 @@ export const array = [
          </label>
        </span>
 
+       <p>TMPL-PAP</p>
+
        <label for="">
          Name of Caller:
          <input type="text" name="" id="" />
@@ -1806,6 +1976,11 @@ export const array = [
          <input type="text" name="" id="" />
        </label>
 
+      <label for="">
+          Error message encountered(screenshot required):
+         <input type="text" name="" id="" />
+       </label>
+
        <label for="exampleFormControlTextarea1" class="form-label"
          >Detailed Description of the issue:</label
        >
@@ -1817,10 +1992,7 @@ export const array = [
            contenteditable="true"
          ></div>
 
-      <label for="">
-      Error message encountered(screenshot required):
-         <input type="text" name="" id="" />
-       </label>
+   
 
 
          <label for="">Troubleshooting/Resolution:</label>
@@ -1934,8 +2106,22 @@ export const array = [
          <input type="text" name="" id="" />
        </label>
        
+
+ <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio6" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio6" value="No" />
+      </label>
+    </span>
+
+
         <p>
-          Is there any ticket/s opened related to the issue in the past month?
           **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
         </p>
 
@@ -1946,13 +2132,16 @@ export const array = [
 
     
 
-         <label for="">
-        Service Advisory Description (If Available):
-         <input type="text" name="" id="" />
-       </label>
+     <label for="">
+         If the issue got fixed, what resolved the issue?
+            <input type="text" name="" id="" />
+          </label>
 
-    <span style="font-weight: bold;">Suggested KBA:</span>
-        <p>PAP not working at specific ICR's - Gen 5 Card Reader</p>
+        <label for="">
+         If the issue is not fixed, what is the next step?
+            <input type="text" name="" id="" />
+        </label>
+
 
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -2013,6 +2202,7 @@ export const array = [
          </label>
        </span>
 
+       <p>TMPL-PUMPIssue</p>
        <label for="">
          Name of Caller:
          <input type="text" name="" id="" />
@@ -2062,8 +2252,21 @@ export const array = [
       <ul>
         <li> If DO/GBW: Contact their Pump Maintenance Contractor.</li>
          <li>If MBA/CMA/RBA site, call BGIS at 1-866-449-2355.</li>
+         </ul>
+
+      <span>
+          Are there any related tickets opened for the same pump/s in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
       <p>
-        Are there any related tickets opened for the same pump/s in the past month?
         **If yes, note the case number/s for reference.
       </p>
 
@@ -2073,14 +2276,15 @@ export const array = [
 
         <div class="sample" contenteditable="true"></div>
 
-    
-      <label for="">
-        Service Advisory Description (If Available):
-         <input type="text" name="" id="" />
-       </label><br/>
-        <span style="font-weight: bold;">Suggested KBA:</span>
-        <p>Pump Offline (One or Multiple)</p>
-        <p>Pump Issue - Tech on Site</p>
+       <label for="">
+         If the issue got fixed, what resolved the issue?
+            <input type="text" name="" id="" />
+          </label>
+
+        <label for="">
+         If the issue is not fixed, what is the next step?
+            <input type="text" name="" id="" />
+        </label>
 
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -2141,6 +2345,12 @@ export const array = [
            <input type="radio" name="SAradio2" value="No" />
          </label>
        </span>
+
+      <label for="">
+        **Service Advisory Description (if Available):
+         <input type="text" name="" id="" />
+       </label>
+       <p>TMPL-POSFreeze</p>
 
        <label for="">
          Name of Caller:
@@ -2221,25 +2431,27 @@ export const array = [
             **If no, follow the KB instructions.
           </span>
 
-          <p>**Check the following from Salesforce:</p>
-          <p>1. Previous cases opened related to the freezing issue.</p>
-          <p>2. Gather what was done previous to resolve the issue.</p>
-
+          <p>**Check previous cases opened related to the freezing issue and gather what was done to resolve the issue**</p>
+      
         <label for="">Troubleshooting/Resolution:</label>
           <div id="FCts" class="container-fluid" contenteditable="true"></div>
 
         <div class="sample" contenteditable="true"></div>
 
+  <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio2" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio2" value="No" />
+      </label>
+    </span>
     
-
-         <label for="">
-        Service Advisory Description (If Available):
-         <input type="text" name="" id="" />
-       </label>
-
-    <span style="font-weight: bold;">Suggested KBA:</span>
-
-        <p>POS Freezing (One or Multiple)</p>
+    <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
 
         <div class="buttons">
            <button type="button" class="btn btn-warning" id="testButton"
@@ -2259,7 +2471,550 @@ export const array = [
       </div>
     
     `
-  }
+  },
+
+  {
+    templateName: "stuckFuelSale",
+    template: `
+      <h1>Stuck Fuel Sale</h1>
+      
+    <label for="">
+      Subject:
+      <input type="text" name="" id="" value="Stuck Fuel Sale (Pump# or POS#)" />
+    </label>
+
+    <label for="">
+      C-Location
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <span>
+      **Is C-Location found in Service Advisory Check?
+      <label>
+        Yes
+        <input type="radio" name="SAradio1" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio1" value="No" />
+      </label>
+    </span>
+
+
+     <span>
+     **If yes, is the Service Advisory related to the issue reported?
+      <label>
+        Yes
+        <input type="radio" name="SAradio2" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio2" value="No" />
+      </label>
+    </span>
+    
+
+     <label for="">
+    **Service Advisory Description (if Available):
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <p>TMPL-FuelSale</p>
+    
+    <label for="">
+      Name of Caller:
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Primary Contact Number
+      <input type="number" name="" id="" />
+    </label>
+
+    <label for="">
+      Alternate Contact Name
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Alternate Contact Number
+      <input type="number" name="" id="" />
+    </label>
+
+    <label for="">
+      Best Time to Call(BTTC)
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+     Email Address (if available)
+      <input type="text" name="" id="" />
+    </label>
+
+     <label for="exampleFormControlTextarea1" class="form-label"
+    >
+    
+    Error message encountered (screenshot required)</label>
+    <label>Detailed Description of the issue:</label>
+
+  <div
+      id="FCdetailed"
+      class="container-fluid"
+      contenteditable="true"
+    ></div>
+
+    <label for="">
+     Card type used and last 4 digits (if available):
+      <input type="number" name="" id="" />
+    </label>
+
+    <label for="">
+     Transaction date/time:
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <label for="">
+      Impacted Pump/POS number:
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <label for="">
+      Transaction amount:
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Is the stuck fuel sale cashed out?
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Is it a valid drive off?
+      <input type="text" name="" id="" />
+    </label>
+
+    <p>**If yes, follow the KB.</p>
+
+    <label for="">
+      Is it a fleet transaction?
+      <input type="text" name="" id="" />
+    </label>
+
+    <p>**If yes, follow KB Fleet Transaction Failures.</p>
+
+    <label for="">Troubleshooting/Resolution:</label>
+    <div id="FCts" class="container-fluid" contenteditable="true"></div>
+
+    <div class="sample" contenteditable="true"></div>
+
+   <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+
+      <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
+
+    <label for="">
+     If the issue got fixed, what resolved the issue?
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      If the issue is not fixed, what is the next step?
+      <input type="text" name="" id="" />
+    </label>
+
+
+     <div class="buttons">
+           <button type="button" class="btn btn-warning" id="testButton"
+       
+           >
+             Generate
+           </button>
+
+           <button
+             type="button"
+             class="btn btn-warning"
+             data-bs-toggle="modal"
+             data-bs-target="#exampleModal"
+           >
+             New Issue
+           </button>
+      </div>
+
+    `
+  },
+
+
+  {
+    templateName: "BOSPassReset",
+    template: `
+      <h1>BOS Password Reset</h1>
+      
+    <label for="">
+      Subject:
+      <input type="text" name="" id="" value="BOS Account Locked/Password Reset" />
+    </label>
+
+    <label for="">
+      C-Location
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <span>
+      **Is C-Location found in Service Advisory Check?
+      <label>
+        Yes
+        <input type="radio" name="SAradio1" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio1" value="No" />
+      </label>
+    </span>
+
+
+     <span>
+     **If yes, is the Service Advisory related to the issue reported?
+      <label>
+        Yes
+        <input type="radio" name="SAradio2" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio2" value="No" />
+      </label>
+    </span>
+    
+
+     <label for="">
+    **Service Advisory Description (if Available):
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <p>TMPL-PWreset</p>
+    
+    <label for="">
+      Name of Caller:
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Primary Contact Number
+      <input type="number" name="" id="" />
+    </label>
+
+    <label for="">
+      Alternate Contact Name
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Alternate Contact Number
+      <input type="number" name="" id="" />
+    </label>
+
+    <label for="">
+      Best Time to Call(BTTC)
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+     Email Address (if available)
+      <input type="text" name="" id="" />
+    </label>
+
+     <label for="exampleFormControlTextarea1" class="form-label"
+    >
+    
+    Error message encountered (screenshot required)</label>
+    <label>Detailed Description of the issue:</label>
+
+  <div
+      id="FCdetailed"
+      class="container-fluid"
+      contenteditable="true"
+    ></div>
+  
+  Error message encountered (screenshot required):
+   
+    <label for="">
+     Is the account locked?
+      <input type="text" name="" id="" />
+    </label>
+
+  <p>**If yes, unlock the account via Computer Management.</p>
+
+  <label for="">
+    Is the manager trying to change their current password or can they still remember the expired password?
+      <input type="text" name="" id="" />
+  </label>
+
+    <p>**If yes, guide them with the New Password Requirement.</p>
+
+
+   <label for="">
+   Is the manager requesting for a password reset for forgotten password?
+      <input type="text" name="" id="" />
+  </label>
+
+  <label for="">
+  Was the secret code successfully verified?
+      <input type="text" name="" id="" />
+  </label>
+
+  <p>**If yes, proceed with the password reset process.</p>
+  <p>**If no, advise them to reach out to their Territory Manager.</p>
+
+    <label for="">Troubleshooting/Resolution:</label>
+    <div id="FCts" class="container-fluid" contenteditable="true"></div>
+
+    <div class="sample" contenteditable="true"></div>
+
+  <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+
+
+      <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
+
+    <label for="">
+     If the issue got fixed, what resolved the issue?
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      If the issue is not fixed, what is the next step?
+      <input type="text" name="" id="" />
+    </label>
+
+
+     <div class="buttons">
+           <button type="button" class="btn btn-warning" id="testButton"
+       
+           >
+             Generate
+           </button>
+
+           <button
+             type="button"
+             class="btn btn-warning"
+             data-bs-toggle="modal"
+             data-bs-target="#exampleModal"
+           >
+             New Issue
+           </button>
+      </div>
+    `
+  },
+
+
+  {
+    templateName: "pinpadRelatedIssue",
+    template: `
+      <h1>PINPAD Related Issue</h1>
+      
+    <label for="">
+      Subject:
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      C-Location
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <span>
+      **Is C-Location found in Service Advisory Check?
+      <label>
+        Yes
+        <input type="radio" name="SAradio1" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio1" value="No" />
+      </label>
+    </span>
+
+
+     <span>
+     **If yes, is the Service Advisory related to the issue reported?
+      <label>
+        Yes
+        <input type="radio" name="SAradio2" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio2" value="No" />
+      </label>
+    </span>
+    
+
+     <label for="">
+    **Service Advisory Description (if Available):
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <p>TMPL-PinPad</p>
+    
+    <label for="">
+      Name of Caller:
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Primary Contact Number
+      <input type="number" name="" id="" />
+    </label>
+
+    <label for="">
+      Alternate Contact Name
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Alternate Contact Number
+      <input type="number" name="" id="" />
+    </label>
+
+    <label for="">
+      Best Time to Call(BTTC)
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+     Email Address (if available)
+      <input type="text" name="" id="" />
+    </label>
+
+     <label for="exampleFormControlTextarea1" class="form-label"
+    >
+    
+    Error message encountered (screenshot required)</label>
+    <label>Detailed Description of the issue:</label>
+
+  <div
+      id="FCdetailed"
+      class="container-fluid"
+      contenteditable="true"
+    ></div>
+
+   <label for="">
+      Model/Device Type:
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+     Which POS is the Pinpad connected to:
+      <input type="text" name="" id="" />
+    </label>
+
+    
+    <label for="">
+      How many devices are impacted:
+      <input type="text" name="" id="" />
+    </label>
+    
+    <label for="">
+     NVP Value Status:
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      Have you tried to initialize pinpad?
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+   Is the device physically damaged (cut/frayed cable, button not working, cracked/broken)?
+      <input type="text" name="" id="" />
+    </label>
+
+  <p>**If yes, assign to L2 for tech dispatch.</p>
+
+    <label for="">Troubleshooting/Resolution:</label>
+    <div id="FCts" class="container-fluid" contenteditable="true"></div>
+
+    <div class="sample" contenteditable="true"></div>
+
+     <span>
+    Is there any ticket/s opened related to the issue in the past month?
+      <label>
+        Yes
+        <input type="radio" name="SAradio3" value="Yes" />
+      </label>
+
+      <label>
+        No
+        <input type="radio" name="SAradio3" value="No" />
+      </label>
+    </span>
+
+
+      <p>**If yes, note the case number/s and raise to L1.5/L2 for further investigation.</p>
+
+    <label for="">
+     If the issue got fixed, what resolved the issue?
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      If the issue is not fixed, what is the next step?
+      <input type="text" name="" id="" />
+    </label>
+
+
+     <div class="buttons">
+           <button type="button" class="btn btn-warning" id="testButton"
+       
+           >
+             Generate
+           </button>
+
+           <button
+             type="button"
+             class="btn btn-warning"
+             data-bs-toggle="modal"
+             data-bs-target="#exampleModal"
+           >
+             New Issue
+           </button>
+      </div>
+    `
+  },
+
+
 
 ];
 

@@ -130,6 +130,9 @@ export const fcFunction = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-FC\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -140,18 +143,23 @@ Email Address(if available): ${textValue[5]}\r
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
-Is there any recent POS upgrade? ${radioFinalVal[2]} \r
-Type of Fuel Controller: ${textValue[6]}\r
-is the Fuel Controller available on SMTOOLS? ${radioFinalVal[3]}\r
-is there power in the pump/fuel dispenser? ${radioFinalVal[4]}\r
-is the power cable properly connected? ${radioFinalVal[5]}\r
-Emergency Alarm Reset? ${radioFinalVal[6]}\r
+Is there any recent POS updgrade? ${radioFinalVal[2]}
+Is there power in the pumps/fuel dispensers? ${radioFinalVal[3]}
+How many pumps fuel dispensers are impacted? ${textValue[6]}
+is the Fuel Controller available on SMTOOLS? ${radioFinalVal[4]}
+**If yes, attempt to do remote reset.\r
+**If no, follow the KB instructions.\r
+Type of Fuel Controller: ${textValue[7]}
+Is the emergency stop button pressed? ${radioFinalVal[5]}
+**If yes, follow site safety procedures.\r
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[6]}\r
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.\r
 
 Troubleshooting/Resolution:\r
 ${textTS}
 
-Service Advisory Description (If Available): ${textValue[7]}\r
-Suggested KBA: All Pumps Down - (Fuel Controller Offline`);
+If the issue got fixed, what resolved the issue? ${textValue[8]}
+if the issue is not fixed, what is the next step? ${textValue[9]}`);
 
 navigator.clipboard.writeText(text);
 };
@@ -182,6 +190,9 @@ export const netConn = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-NetConn\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -192,17 +203,31 @@ Email Address(if available): ${textValue[5]}\r
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
-**If yes, please note the cutover date from the RTM sites file: ${textValue[6]}\r
-is the site offline on toolset? ${radioFinalVal[2]}\r
-Cybera Status A in red? ${radioFinalVal[3]}\r
-Is the network cable/s properly connected? ${radioFinalVal[4]}\r
-Power cycled the modem? ${radioFinalVal[5]}\r
-is there any ticket/s opened related to the issue in the past month? ${textValue[7]}\r
+Is the site able to process transactions from POS and or Pumps? ${radioFinalVal[2]}
+
+Is this an RTM site? ${radioFinalVal[3]}
+
+**If yes, please note the cutover date from the RTM sites file: ${textValue[6]}
+
+Is the site offline on toolset? ${radioFinalVal[4]}
+
+Check the status of the devices.
+** if RTM, check Meraki and VMware
+** if non-RTM, check the Cybera
+
+Is the network cable/s properly connected? ${radioFinalVal[5]}
+
+Was the modem Power cycled? ${radioFinalVal[6]}
+
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[7]}
+
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
 
 Troubleshooting/Resolution:
 ${textTS}
 
-Service Advisory Description(If Available):${textValue[8]}`);
+If the issue got fixed, what resolved the issue?${textValue[7]}
+If the issue is not fixed, what is the next step?${textValue[8]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -232,6 +257,10 @@ export const eodFailedOnPos = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-EODFailed\r
+
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -246,21 +275,16 @@ Is there a 'Server Offline' alarm on POS? ${radioFinalVal[2]}\r
 Have they successfully Closed the Shift on the POS? ${radioFinalVal[3]}\r
 
 **If yes, confirm in RSM>POS Management **If no, follow the KB instructions.\r
-Is there any ticket/s opened related to the issue in the past month?\r
+
+
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[4]}
 **If yes, note the case number/s and raise to L1.5/L2 for further investigation.\r
 
 Troubleshooting/Resolution:
 ${textTS}\r
 
-Resolution (what fixed the issue?): ${textValue[6]}\r
-
-Service Advisory Description (if Available): ${textValue[7]}
-
-Suggested KBAs:
-End of Day (EOD) or End of Shift (EOS) Do Not Print
-POS Report Missing OR No Data To Report
-EOD Device total issue
-End Of Day (EOD) Failure Alert on the POS or Batch In Progress`);
+If the issue got fixed, what resolved the issue?: ${textValue[6]}\r
+If the issue is not fixed, what is the next step?: ${textValue[7]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -291,6 +315,9 @@ export const fuelPriceChange = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-FuelPrice\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -310,8 +337,13 @@ Did they check for BOS offline or server offline message? ${radioFinalVal[3]}
 Troubleshooting/Resolution:
 ${textTS}\r
 
-Resolution (what fixed the issue?): ${textValue[8]}\r
-Service Advisory Description (if Available): ${textValue[9]}`);
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[4]}
+
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+
+ If the issue got fixed, what resolved the issue?: ${textValue[8]}\r
+
+ If the issue is not fixed, what is the next step? ${textValue[9]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -342,28 +374,28 @@ export const siteFacilityIssue = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
-Name of Caller: ${textValue[2]}\r
+**Service Advisory Description (if Available): ${textValue[2]}
+
+TMPL-SiteFac\r
+
+Name of Caller: ${textValue[3]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
-Alternate Contact Name: ${textValue[3]}\r
+Alternate Contact Name: ${textValue[4]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
-Best time to Call(BTTC): ${textValue[4]}\r
-Email Address(if available): ${textValue[5]}\r
+Best time to Call(BTTC): ${textValue[5]}\r
+Email Address(if available): ${textValue[6]}\r
 
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
 If the site is calling in about Site Facilities related issues (air conditioning, fridge, potholes, front door issue, vapor alarm, site safe, price pole, camera system, printer paper roll, alarms, broken pump host, etc.)
 
-Is there any ticket/s opened related to the issue in the past month? **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}
 
-Assignment Vendor: ${textValue[6]}
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
 
-Suggested KBA:
-Security Camera System
-Vapour Alarm
-Site Safe
-Price Pole (An Outside Price Sign)
-Site Facility Issues`);
+Assignment Vendor: ${textValue[7]}
+`);
 navigator.clipboard.writeText(text);
 };
 
@@ -392,6 +424,9 @@ export const posErrorMessages = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-PosERRmsg\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -407,17 +442,15 @@ Which POS Terminal is impacted? ${textValue[7]}
 Exact error message/s: (Attach a screenshot of the error) ${textValue[8]}
 Transaction details (if applicable): ${textValue[9]}
 
-Is there any ticket/s opened related to the issue in the past month?
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}
 
 **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
 
 Troubleshooting/resolution:
 ${textTS}
 
-Service Advisory Description (if Available):${textValue[10]}
-
-Suggested KBA:
-Shell - POS Alarms and Notifications`);
+If the issue got fixed, what resolved the issue? ${textValue[10]}
+If the issue is not fixed, what is the next step? ${textValue[11]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -445,6 +478,9 @@ export const electronicPaymentOutOfOrder = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-EPC\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -462,16 +498,15 @@ Is network connection good? ${radioFinalVal[5]}
 If network is down, is Store and Forward Mode (SAF) working? ${radioFinalVal[6]}
 Is EPC powered on? ${radioFinalVal[7]}
 
-Is there any ticket/s opened related to the issue in the past month? **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[8]}
 
-Resolution (what fixed the issue?): ${textValue[6]}
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
 
 Troubleshooting/resolution:
 ${textTS}
 
-Service Advisory Description (if Available):${textValue[7]}
-Suggested KBA:
-Electronic Payment Out of Order- EPC4`);
+If the issue got fixed, what resolved the issue?: ${textValue[6]}
+If the issue is not fixed, what is the next step?: ${textValue[7]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -504,42 +539,43 @@ export const scannerNotWorking = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
-Name of Caller: ${textValue[2]}\r
+**Service Advisory Description (if Available): ${textValue[2]}
+
+TMPL-SCANNER\r
+
+Name of Caller: ${textValue[3]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
-Alternate Contact Name: ${textValue[3]}\r
+Alternate Contact Name: ${textValue[4]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
-Best time to Call(BTTC): ${textValue[4]}\r
-Email Address(if available): ${textValue[5]}\r
+Best time to Call(BTTC): ${textValue[5]}\r
+Email Address(if available): ${textValue[6]}\r
 
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
-Is this a POS or PDI scanner? ${textValue[6]}
+Is this a POS or PDI scanner? ${textValue[7]}
 **If POS, check the following:
 Are all items not scanning? ${radioFinalVal[2]}
-How many scanners are impacted? ${textValue[7]}
-Which POS is the scanner connected? ${textValue[8]}
-Did you reprogram the scanner? ${textValue[9]}
+How many scanners are impacted? ${textValue[8]}
+Which POS is the scanner connected? ${textValue[9]}
+Did you reprogram the scanner? ${textValue[10]}
 
 
 *If PDI, check the KB article for specific instructions.
 
-Are there any related tickets opened for the same device in the past month? **If yes, note the case number/s and raise to L2 for possible replacement
+Are there any related tickets opened for the same device in the past month? ${radioFinalVal[3]} 
+**If yes, note the case number/s and raise to L2 for possible replacement
 
-Model/Device Type: ${textValue[10]}
-Error Message/s (if applicable) ${textValue[11]}
-Have you tried programming the scanner? ${textValue[12]}
+Model/Device Type: ${textValue[11]}
+Error Message/s (if applicable) ${textValue[12]}
+Have you tried programming the scanner? ${textValue[13]}
 
 Troubleshooting/resolution:
 ${textTS}
 
-Resolution (what fixed the issue?): ${textValue[13]}
+If the issue got fixed, what resolved the issue? ${textValue[14]}
 
-Service Advisory Description (if Available):${textValue[14]}
-
-Suggested KBA:
-POS Scanner Unable to Scan (Xenon 1902)
-PDI Handheld Scanner not Working`);
+If the issue is not fixed, what is the next step? ${textValue[15]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -568,6 +604,9 @@ export const posReceiptIssues = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-RcptIssue\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -584,21 +623,15 @@ Affected device/s: ${textValue[8]}
 Error message/s: ${textValue[9]}
 Is the POS printer working? ${textValue[10]}
 
-Is there any ticket/s opened related to the issue in the past month?
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}
 **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
 
 Troubleshooting/resolution:
 ${textTS}
 
-Resolution (what fixed the issue?): ${textValue[13]}
+If the issue got fixed, what resolved the issue? ${textValue[11]}
 
-Service Advisory Description (if Available):${textValue[14]}
-
-Suggested KBA:
-Receipt Issues and Inquiries for POS or Pumps
-POS Receipt Printer Not Functioning
-Safe Drop Receipt Not Printing on POS
-Shell - RLM SCAN Receipt printer issue`);
+If the issue is not fixed, what is the next step? ${textValue[12]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -627,6 +660,9 @@ export const genericTemplate = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-Generic\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -640,14 +676,18 @@ ${FCdetailed}\r
 Troubleshooting/resolution:
 ${textTS}
 
-Resolution (what fixed the issue?): ${textValue[6]}
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}\r
+
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+
+If the issue got fixed, what resolved the issue?: ${textValue[6]}
+
+If the issue is not fixed, what is the next step?: ${textValue[7]}
 
 Business Impact Prioritization:
 1. Can the site process any transactions in the POS? If no, set case to P2
 2. Can the site process any transactions in the Pumps?If no, set case to P2
-3. Is the site hard down (unable to transact both in the POS Pumps? If yes, set case to P2
-
-Service Advisory Description (if Available):${textValue[7]}`);
+3. Is the site hard down (unable to transact both in the POS Pumps? If yes, set case to P2`);
 navigator.clipboard.writeText(text);
 };
 
@@ -675,6 +715,9 @@ export const GoCoTS = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-GOCO\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 
@@ -718,17 +761,20 @@ export const papNotWorking = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-PAP\r
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
 Email Address(if available): ${textValue[5]}\r
-
+Error message encountered(screenshot required): ${textValue[6]}
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
-Error message encountered(screenshot required): ${textValue[6]}
+
 
 Troubleshooting/resolution:
 ${textTS}
@@ -749,15 +795,14 @@ what is the error message on the ICR? ${textValue[12]}
 Able to ping the ICR? ${textValue[13]}
 Reviewed transaction journal for issue verification? ${textValue[14]}
 
-Is there any ticket/s opened related to the issue in the past month?
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[7]}
 **if yes, note the case number/s and raise to L1.5/L2 for further investigation
 
 **if the issue is resolved, input the details of what fixed the issue on the Resolution Notes
 
-Service Advisory Description (if Available):${textValue[15]}
+ If the issue got fixed, what resolved the issue? ${textValue[15]}
 
-Suggested KBA:
-PAP not working at specific ICR's - Gen 5 Card Reader`);
+ If the issue is not fixed, what is the next step? ${textValue[16]}`);
 navigator.clipboard.writeText(text);
 };
 
@@ -785,6 +830,10 @@ export const pumpsDown = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+
+TMPL-PUMPIssue\r
+
+
 Name of Caller: ${textValue[2]}\r
 Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
@@ -798,16 +847,18 @@ ${FCdetailed}\r
 How many pump(s) is/are affected? ${textValue[6]}
 If DO/GBW: Contact their Pump Maintenance Contractor.
 If MBA/CMA/RBA site, call BGIS at 1-866-449-2355.
-Are there any related tickets opened for the same pump/s in the past month? **If yes, note the case number/s for reference.
+
+Are there any related tickets opened for the same pump/s in the past month? ${radioFinalVal[2]}
+
+**If yes, note the case number/s for reference.
 
 Troubleshooting/resolution:
 ${textTS}
 
-Service Advisory Description (if Available):${textValue[7]}
+If the issue got fixed, what resolved the issue? ${textValue[7]}
 
-Suggested KBA:
-Pump Offline(One or Multiple)
-Pump Issue - Tech on Site`);
+If the issue is not fixed, what is the next step? ${textValue[8]}
+`);
 navigator.clipboard.writeText(text);
 };
 
@@ -836,32 +887,230 @@ export const posFreezing = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
-Name of Caller: ${textValue[2]}\r
-Primary Contact Number: ${primaryContactValue[0]}\r
-Alternate Contact Name: ${textValue[3]}\r
-Alternate Contact Number: ${primaryContactValue[1]}\r
-Best time to Call(BTTC): ${textValue[4]}\r
-Email Address(if available): ${textValue[5]}\r
+**Service Advisory Description (if Available): ${textValue[2]}\r
 
+TMPL-POSFreeze\r
+
+Name of Caller: ${textValue[3]}\r
+Primary Contact Number: ${primaryContactValue[0]}\r
+Alternate Contact Name: ${textValue[4]}\r
+Alternate Contact Number: ${primaryContactValue[1]}\r
+Best time to Call(BTTC): ${textValue[5]}\r
+Email Address(if available): ${textValue[6]}\r
+
+${console.log(para)}
 Detailed Description of the issue:\r
 ${FCdetailed}\r
 
-1.How many POS do the site have? ${textValue[6]}
-2.Which POS is/are freezing (POS1, POS2, POS3)? ${textValue[7]}
-3.Did the site experience this before? When was the last time? ${textValue[8]}
-4.At what point is/are POS freezing? ${textValue[9]}
-5.Is the POS freezing issue related to payment/EPC4 issue before POS froze? ${textValue[10]}
-**If yes, escalate the case to L2 team. **If no, follow the KB instructions.
-**Check the following from Salesforce:
-1. Previous cases opened related to the freezing issue.
-2. Gather what was done previous to resolve the issue.
+1.How many POS do the site have? ${textValue[7]}
+
+2.Which POS is/are freezing (POS1, POS2, POS3)? ${textValue[8]}
+
+3.Did the site experience this before? When was the last time? ${textValue[9]}
+
+4.At what point is/are POS freezing? ${textValue[10]}
+
+5.Is the POS freezing issue related to payment/EPC4 issue before POS froze? ${textValue[11]}
+
+**If yes, escalate the case to L2 team. 
+**If no, follow the KB instructions.
+**Check previous cases opened related to the freezing issue and gather what was done to resolve the issue**
 
 Troubleshooting/resolution:
 ${textTS}
 
-Service Advisory Description (if Available):${textValue[11]}
 
-Suggested KBA:
-POS Freezing (One or Multiple)`);
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}
+
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.`);
+navigator.clipboard.writeText(text);
+};
+
+
+
+
+export const stuckFuelSale = () => {
+  const basicFunction = basicInputs()
+  const textValue = basicFunction[0]
+  const radioFinalVal = basicFunction[1]
+  const primaryContactValue = basicFunction[2]
+  const FCdetailed = basicFunction[3]
+  const para = basicFunction[5]
+  const textTS = detailedTS()
+  localStorage.setItem("cLocation", textValue[1])
+  localStorage.setItem("siteAd1", radioFinalVal[0])
+  localStorage.setItem("siteAd2", radioFinalVal[1])
+  localStorage.setItem("callerName", textValue[2])
+  localStorage.setItem("altName", textValue[3])
+  localStorage.setItem("primeNumber", primaryContactValue[0])
+  localStorage.setItem("altNumber", primaryContactValue[1])
+  localStorage.setItem("bestTime", textValue[4])
+  localStorage.setItem("emailAd", textValue[5])
+
+  const text = (para.innerText =
+`Subject: ${textValue[0]}\r
+c-Location: ${textValue[1]}\r
+**Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
+**If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]}\r
+
+**Service Advisory Description (if Available): ${textValue[2]}
+
+TMPL-FuelSale\r
+
+Name of Caller: ${textValue[3]}\r
+Primary Contact Number: ${primaryContactValue[0]}\r
+Alternate Contact Name: ${textValue[4]}\r
+Alternate Contact Number: ${primaryContactValue[1]}\r
+Best time to Call(BTTC): ${textValue[5]}\r
+Email Address(if available): ${textValue[6]}\r
+
+Detailed Description of the issue:\r
+${FCdetailed}\r
+
+Card type used and last 4 digits(if available): ${primaryContactValue[2]}
+Transaction date/time: ${textValue[7]}
+Impacted Pump/POS number: ${textValue[8]}
+Transaction amount: ${textValue[9]}
+Is the stuck fuel sale cashed out?: ${textValue[10]}
+Is it a valid drive off?: ${textValue[11]}
+**If yes, follow the KB.
+is it a fleet transaction?: ${textValue[12]}
+
+Troubleshooting/resolution:
+${textTS}
+
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+
+If the issue got fixed, what resolved the issue?: ${textValue[13]}
+If the issue is not fixed, what is the next step?: ${textValue[14]}`);
+navigator.clipboard.writeText(text);
+};
+
+
+
+
+export const pinpadRelatedIssue = () => {
+  const basicFunction = basicInputs()
+  const textValue = basicFunction[0]
+  const radioFinalVal = basicFunction[1]
+  const primaryContactValue = basicFunction[2]
+  const FCdetailed = basicFunction[3]
+  const para = basicFunction[5]
+  const textTS = detailedTS()
+  localStorage.setItem("cLocation", textValue[1])
+  localStorage.setItem("siteAd1", radioFinalVal[0])
+  localStorage.setItem("siteAd2", radioFinalVal[1])
+  localStorage.setItem("callerName", textValue[2])
+  localStorage.setItem("altName", textValue[3])
+  localStorage.setItem("primeNumber", primaryContactValue[0])
+  localStorage.setItem("altNumber", primaryContactValue[1])
+  localStorage.setItem("bestTime", textValue[4])
+  localStorage.setItem("emailAd", textValue[5])
+
+  const text = (para.innerText =
+`Subject: ${textValue[0]}\r
+c-Location: ${textValue[1]}\r
+**Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
+**If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]}\r
+**Service Advisory Description (if Available):${textValue[2]}
+
+TMPL-PinPad\r
+
+Name of Caller: ${textValue[3]}\r
+Primary Contact Number: ${primaryContactValue[0]}\r
+Alternate Contact Name: ${textValue[4]}\r
+Alternate Contact Number: ${primaryContactValue[1]}\r
+Best time to Call(BTTC): ${textValue[5]}\r
+Email Address(if available): ${textValue[6]}\r
+
+Error message encountered (screenshot required)
+
+Detailed Description of the issue:\r
+${FCdetailed}\r
+
+Model/Device Type: ${textValue[7]}
+Which POS is the Pinpad connected to:: ${textValue[8]}
+How many devices are impacted: ${textValue[9]}
+NVP Value Status: ${textValue[10]}
+Have you tried to initialize pinpad?: ${textValue[11]}
+Is the device physically damaged (cut/frayed cable, button not working, cracked/broken)?: ${textValue[12]}
+
+**If yes, assign to L2 for tech dispatch.
+
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+
+Troubleshooting/resolution:
+${textTS}
+
+
+If the issue got fixed, what resolved the issue?: ${textValue[13]}
+If the issue is not fixed, what is the next step?: ${textValue[14]}`);
+navigator.clipboard.writeText(text);
+};
+
+
+
+export const BOSPasswordReset = () => {
+  const basicFunction = basicInputs()
+  const textValue = basicFunction[0]
+  const radioFinalVal = basicFunction[1]
+  const primaryContactValue = basicFunction[2]
+  const FCdetailed = basicFunction[3]
+  const para = basicFunction[5]
+  const textTS = detailedTS()
+  localStorage.setItem("cLocation", textValue[1])
+  localStorage.setItem("siteAd1", radioFinalVal[0])
+  localStorage.setItem("siteAd2", radioFinalVal[1])
+  localStorage.setItem("callerName", textValue[2])
+  localStorage.setItem("altName", textValue[3])
+  localStorage.setItem("primeNumber", primaryContactValue[0])
+  localStorage.setItem("altNumber", primaryContactValue[1])
+  localStorage.setItem("bestTime", textValue[4])
+  localStorage.setItem("emailAd", textValue[5])
+
+  const text = (para.innerText =
+`Subject: ${textValue[0]}\r
+c-Location: ${textValue[1]}\r
+**Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
+**If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]}\r
+**Service Advisory Description (if Available): ${textValue[2]}
+
+TMPL-PWreset\r
+
+Name of Caller: ${textValue[3]}\r
+Primary Contact Number: ${primaryContactValue[0]}\r
+Alternate Contact Name: ${textValue[4]}\r
+Alternate Contact Number: ${primaryContactValue[1]}\r
+Best time to Call(BTTC): ${textValue[5]}\r
+Email Address(if available): ${textValue[6]}\r
+
+Detailed Description of the issue:\r
+${FCdetailed}\r
+
+Error message encountered (screenshot required):
+
+Is the account locked? ${textValue[7]}
+**If yes, unlock the account via Computer Management.
+
+Is the manager trying to change their current password or can they still remember the expired password? ${textValue[8]}
+**If yes, guide them with the New Password Requirement
+
+Is the manager requesting for a password reset for forgotten password? ${textValue[9]}
+
+Was the secret code successfully verified? ${textValue[10]}
+
+**If yes, proceed with the password reset process.
+**If no, advise them to reach out to their Territory Manager.
+
+Troubleshooting/resolution:
+${textTS}
+
+Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[2]}\r
+**If yes, note the case number/s and raise to L1.5/L2 for further investigation.
+
+If the issue got fixed, what resolved the issue?: ${textValue[11]}
+If the issue is not fixed, what is the next step?: ${textValue[12]}`);
 navigator.clipboard.writeText(text);
 };

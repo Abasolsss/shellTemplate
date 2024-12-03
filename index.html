@@ -32,7 +32,7 @@
   <body>
     <nav class="navbar bg-warning">
       <div class="row">
-          <div class="col-8">
+          <div class="col-4">
             <div class="navbars">
               <div class="img">
                  <div class="tenor-gif-embed" data-postid="23615382" data-share-method="host" data-aspect-ratio="0.76875" data-width="100%"><a href="https://tenor.com/view/ogusers-only-tough-only-tough-people-last-gif-23615382">Ogusers Only Tough GIF</a>from <a href="https://tenor.com/search/ogusers-gifs">Ogusers GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
@@ -44,8 +44,17 @@
                    <h5>- Random Person</h5>
               </div>
             </div>
-      
-           
+          </div>
+          <div class="col-4">
+            <div class="vlsl">
+                <h5>
+                  SL: 11/17/2024
+                </h5>
+                <p>MyNewPW080829202307021997</p>
+                <h5>
+                  VL: N/A
+                </h5>
+            </div>
           </div>
           <div class="col-4">
             <div class="weatherDiv">
@@ -65,36 +74,49 @@
             id="templateSelector"
           >
             <option selected class="hello" disabled>Open this select menu</option>
-            <option value="genericTemplate">
-              Generic Template
-            </option>
-            <option value="fcTemplate">Fuel Controlller Offline</option>
-            <option value="netConn">Network Connectivity</option>
+            <option value="BOSPassReset">BOS Password Reset</option>
             <option value="EODFailedPOS">EOD Failed on POS</option>
-            <option value="fuelPriceChange">Fuel Price Change</option>
-            <option value="siteFacilityIssue">Site Facility Issue</option>
-            <option value="posErrorMessages">POS Error Messages</option>
             <option value="electronicPaymentOutOfOrder">
               Electronic Payment out of Order
             </option>
-            <option value="scannerNotWorking">
-              Scanner not working
-            </option>
-            <option value="posReceiptIssues">
-              POS Receipt Issues
+            <option value="fuelPriceChange">Fuel Price Change</option>
+            <option value="fcTemplate">Fuel Controller Template</option>
+            <option value="genericTemplate">
+              Generic Template
             </option>
             <option value="GoCoTS">
               GoCo Tech Calling for L1 Troubleshooting with Site
+            </option>
+            <option value="netConn">Network Connectivity</option>
+            <option value="posErrorMessages">POS Error Messages</option>
+            <option value="posReceiptIssues">
+              POS Receipt Issues
             </option>
             <option value="papNotWorking">
               Pay at the Pump not working
             </option>
             <option value="pumpsDown">
-              Pumps Down
+              Pumps Issue
             </option>
             <option value="posFreezing">
               POS Freezing
             </option>
+
+            <option value="pinpadRelatedIssue">
+              PINPAD Related Issue
+            </option>
+
+            <option value="siteFacilityIssue">Site Facility Issue</option>
+          
+            <option value="scannerNotWorking">
+              Scanner not working
+            </option>
+
+            <option value="stuckFuelSale">
+              Stuck Fuel Sale
+            </option>
+
+           
           </select>
   
           <div
@@ -115,22 +137,29 @@
                 <button type="button" class="btn btn-danger" id="resetBTN">Reset Template</button>
               </div>
        
-           
+         
               <div class="info">
                 <ul>
                   <li>
                     <p>
                       NON-RTM = Cybera
                       <br/>
-                      RTM = VMware, meraki, netGear, cradle point, smart RG modem
+                      RTM = VMware, smart RG,Ovis Link
                     </p>
+                  </li>
+                  <li>
+                    <p>BOPC: private\amarino January_092023</p>
                   </li>
                   <li>
                     <p>WIPI PASS - G9PxVphV (Cyberzone)
                     </p>
                   </li>
                   <li>
-                    <p>BOPC PASS - SSunday123456!!
+                    <p>BOPC PASS - FFriday123456!!
+                    </p>
+                  </li>
+                  <li>
+                    <p>Itar - FFriday123456!!
                     </p>
                   </li>
                   <li>
@@ -161,6 +190,7 @@
     </div>
 
 
+
     <!-- new issue -->
     <!-- Modal -->
     <div
@@ -187,27 +217,24 @@
               aria-label="Default select example"
               id="newIssueSelector"
             >
-            <option value="genericTemplate">
-              Generic Template
-            </option>
-            <option value="fcTemplate">Fuel Controller Template</option>
-            <option value="netConn">Network Connectivity</option>
             <option value="EODFailedPOS">EOD Failed on POS</option>
-            <option value="fuelPriceChange">Fuel Price Change</option>
-            <option value="siteFacilityIssue">Site Facility Issue</option>
-            <option value="posErrorMessages">POS Error Messages</option>
             <option value="electronicPaymentOutOfOrder">
               Electronic Payment out of Order
             </option>
-            <option value="scannerNotWorking">
-              Scanner not working
+            <option value="fuelPriceChange">Fuel Price Change</option>
+            <option value="fcTemplate">Fuel Controller Template</option>
+            <option value="genericTemplate">
+              Generic Template
             </option>
+            <option value="GoCoTS">
+              GoCo Tech Calling for L1 Troubleshooting with Site
+            </option>
+
+            <option value="netConn">Network Connectivity</option>
+            <option value="posErrorMessages">POS Error Messages</option>
             <option value="posReceiptIssues">
               POS Receipt Issues
             </option>
-            <!-- <option value="GoCoTS">
-              GoCo Tech Calling for L1 Troubleshooting with Site
-            </option> -->
             <option value="papNotWorking">
               Pay at the Pump not working
             </option>
@@ -217,8 +244,13 @@
             <option value="posFreezing">
               POS Freezing
             </option>
+            <option value="siteFacilityIssue">Site Facility Issue</option>
+          
+            <option value="scannerNotWorking">
+              Scanner not working
+            </option>
+          
           </select>
-            </select>
           </div>
           <!-- <div class="modal-footer">
             <button

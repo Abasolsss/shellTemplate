@@ -1,4 +1,4 @@
-import { fcFunction, netConn,eodFailedOnPos,fuelPriceChange,siteFacilityIssue,posErrorMessages, electronicPaymentOutOfOrder,scannerNotWorking,posReceiptIssues,genericTemplate,GoCoTS,papNotWorking,pumpsDown,posFreezing } from "./functions.js";
+import { fcFunction, netConn,eodFailedOnPos,fuelPriceChange,siteFacilityIssue,posErrorMessages, electronicPaymentOutOfOrder,scannerNotWorking,posReceiptIssues,genericTemplate,GoCoTS,papNotWorking,pumpsDown,posFreezing, stuckFuelSale, pinpadRelatedIssue, BOSPasswordReset } from "./functions.js";
 import { templateValueFunct, newIssueFunct } from "./templates.js";
 
 const templateSelect = document.getElementById("templateSelector");
@@ -87,7 +87,8 @@ if (newIssueSelect) {
                     genericTemplate()
                   break;
 
-                  
+           
+
           default:
             break;
         }
@@ -165,6 +166,19 @@ if (templateSelect) {
 
                   case "posFreezing":
                    posFreezing()
+                  break;
+
+                  case "stuckFuelSale":
+                    stuckFuelSale()
+                  break;
+
+
+                  case "pinpadRelatedIssue":
+                    pinpadRelatedIssue()
+                  break;
+
+                  case "BOSPassReset":
+                    BOSPasswordReset()
                   break;
         
 
