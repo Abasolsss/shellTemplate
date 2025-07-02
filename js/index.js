@@ -1,5 +1,29 @@
-import { fcFunction, netConn,eodFailedOnPos,fuelPriceChange,siteFacilityIssue,posErrorMessages, electronicPaymentOutOfOrder,scannerNotWorking,posReceiptIssues,genericTemplate,GoCoTS,papNotWorking,pumpsDown,posFreezing, stuckFuelSale, pinpadRelatedIssue, BOSPasswordReset } from "./functions.js";
+
 import { templateValueFunct, newIssueFunct } from "./templates.js";
+
+// Templates function directory
+
+
+
+import { fcFunction } from "../templates/FCofflineTemplate/FCofflineFunction.js"; 
+import { netConn } from "../templates/netConnTemplate/netConnFunction.js";
+import { eodFailedOnPos } from "../templates/eodFailedOnPOSTemplate/eodFailedFunction.js";
+import { fuelPriceChange } from "../templates/fuelPriceChangeTemplate/fuelPriceFunction.js";
+import { siteFacilityIssue } from "../templates/siteFacilityIssueTemplate/siteFacilityIssueFunction.js";
+import { posErrorMessages } from "../templates/POSerrorMSGtemplate.js/POSerrorMSGFunction.js";
+import { electronicPaymentOutOfOrder } from "../templates/epcTemplate/epcFunction.js";
+import { scannerNotWorking } from "../templates/scannerTemplate/scannerFunction.js";
+import { genericTemplate } from "../templates/genericTemplate/genericFunction.js";
+import { posReceiptIssues } from "../templates/POSreceipTemplate/POSreceiptFunction.js";
+import { GoCoTS } from "../templates/gocoTemplate/gocoFunction.js"
+import { papNotWorking } from "../templates/papNotWokingTemplate/papNotWorkingFunction.js";
+import { pumpsDown } from "../templates/pumpsDownTemplate/pumpsDownFunction.js" 
+import { posFreezing } from "../templates/posFreezingTemplate/posFreezingFunction.js";
+import { stuckFuelSale } from "../templates/stuckSaleTemplate/stuckSaleFunction.js";
+import { BOSPasswordReset } from "../templates/BOSpassTemplate/BOStemplateFunction.js";
+import { pinpadRelatedIssue } from "../templates/pinpadRelatedTemplate/pinpadRelatedFunction.js";
+
+
 
 const templateSelect = document.getElementById("templateSelector");
 
@@ -110,6 +134,9 @@ if (templateSelect) {
 
     setTimeout(() => {
       document.getElementById("testButton").addEventListener("click", () => {
+
+
+
         switch (selectedTemplate) {
           case "fcTemplate":
             fcFunction();
