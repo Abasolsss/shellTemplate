@@ -37,19 +37,18 @@ export function EPCtemplateDIR () {
            <input type="radio" name="SAradio2" value="No" />
          </label>
        </span>
+    </span>
 
-      <p>TMPL-EPC</p>
 
-       <label for="">
-         Name of Caller:
+    <label for="">
+         **Service Advisory Description (if Available):
          <input type="text" name="" id="" />
        </label>
 
-       <label for="">
-         Primary Contact Number
-         <input type="number" name="" id="" />
-       </label>
 
+      <p>TMPL-EPC</p>
+
+ 
        <label for="">
          Alternate Contact Name:
          <input type="text" name="" id="" />
@@ -65,10 +64,7 @@ export function EPCtemplateDIR () {
          <input type="text" name="" id="" />
        </label>
 
-       <label for="">
-         Email Address(if available)
-         <input type="text" name="" id="" />
-       </label>
+  
 
        <label for="exampleFormControlTextarea1" class="form-label"
          >Detailed Description of the issue:</label
@@ -80,6 +76,22 @@ export function EPCtemplateDIR () {
            class="container-fluid"
            contenteditable="true"
          ></div>
+
+        <label for="">
+          Error message encountered (screenshot required):
+         <input type="text" name="" id="" />
+       </label>
+
+        <label for="">
+           *What happened prior to the issue happening?
+         <input type="text" name="" id="" />
+       </label>
+
+
+        <label for="">
+          *Did you do any troubleshooting before calling the service desk? (Please specify)
+         <input type="text" name="" id="" />
+       </label>
 
 
           <span>
@@ -163,6 +175,7 @@ export function EPCtemplateDIR () {
          </label>
        </span>
 
+      <p>*Include the time stamp of the screenshot that will be attached</p>
 
     <span>
     Is there any ticket/s opened related to the issue in the past month?

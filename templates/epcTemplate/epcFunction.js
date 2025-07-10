@@ -25,18 +25,28 @@ export const electronicPaymentOutOfOrder = () => {
 c-Location: ${textValue[1]}\r
 **Is C-Location found in Service Advisory Check?: ${radioFinalVal[0]}\r
 **If yes, is the Service Advisory related to the issue reported?: ${radioFinalVal[1]} \r
+**Service Advisory Description (if Available): ${textValue[2]}
+
 
 TMPL-EPC\r
 
-Name of Caller: ${textValue[2]}\r
-Primary Contact Number: ${primaryContactValue[0]}\r
 Alternate Contact Name: ${textValue[3]}\r
 Alternate Contact Number: ${primaryContactValue[1]}\r
 Best time to Call(BTTC): ${textValue[4]}\r
-Email Address(if available): ${textValue[5]}\r
 
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
+
+Error message encountered (screenshot required):
+${textValue[5]}\r
+
+*What happened prior to the issue happening?
+${textValue[6]}\r
+
+*Did you do any troubleshooting before calling the service desk? (Please specify)
+${textValue[7]}\r
+
 
 Are all electronic payments not working? ${radioFinalVal[2]}
 **If no, is debit/credit working inside? ${radioFinalVal[3]}
@@ -45,6 +55,9 @@ Is network connection good? ${radioFinalVal[5]}
 If network is down, is Store and Forward Mode (SAF) working? ${radioFinalVal[6]}
 Is EPC powered on? ${radioFinalVal[7]}
 
+*Include the time stamp of the screenshot that will be attached
+
+
 Is there any ticket/s opened related to the issue in the past month? ${radioFinalVal[8]}
 
 **If yes, note the case number/s and raise to L1.5/L2 for further investigation.
@@ -52,7 +65,7 @@ Is there any ticket/s opened related to the issue in the past month? ${radioFina
 Troubleshooting/resolution:
 ${textTS}
 
-If the issue got fixed, what resolved the issue?: ${textValue[6]}
-If the issue is not fixed, what is the next step?: ${textValue[7]}`);
+If the issue got fixed, what resolved the issue?: ${textValue[8]}
+If the issue is not fixed, what is the next step?: ${textValue[9]}`);
 navigator.clipboard.writeText(text);
 };

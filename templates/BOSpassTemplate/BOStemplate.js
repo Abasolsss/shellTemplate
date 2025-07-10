@@ -6,7 +6,7 @@ export function BOStemplateDIR () {
       
     <label for="">
       Subject:
-      <input type="text" name="" id="" value="BOS Account Locked/Password Reset" />
+      <input type="text" name="" id=""/>
     </label>
 
     <label for="">
@@ -50,16 +50,7 @@ export function BOStemplateDIR () {
 
 
     <p>TMPL-PWreset</p>
-    
-    <label for="">
-      Name of Caller:
-      <input type="text" name="" id="" />
-    </label>
 
-    <label for="">
-      Primary Contact Number
-      <input type="number" name="" id="" />
-    </label>
 
     <label for="">
       Alternate Contact Name
@@ -76,15 +67,11 @@ export function BOStemplateDIR () {
       <input type="text" name="" id="" />
     </label>
 
-    <label for="">
-     Email Address (if available)
-      <input type="text" name="" id="" />
-    </label>
+
 
      <label for="exampleFormControlTextarea1" class="form-label"
     >
     
-    Error message encountered (screenshot required)</label>
     <label>Detailed Description of the issue:</label>
 
   <div
@@ -93,8 +80,25 @@ export function BOStemplateDIR () {
       contenteditable="true"
     ></div>
   
-  Error message encountered (screenshot required):
+
    
+    <label for="">
+      Error message encountered (screenshot required):
+      <input type="text" name="" id="" />
+    </label>
+
+
+    <label for="">
+      *What happened prior to the issue happening?
+      <input type="text" name="" id="" />
+    </label>
+
+    <label for="">
+      *Did you do any troubleshooting before calling the service desk? (Please specify)
+      <input type="text" name="" id="" />
+    </label>
+
+
     <label for="">
      Is the account locked?
       <input type="text" name="" id="" />

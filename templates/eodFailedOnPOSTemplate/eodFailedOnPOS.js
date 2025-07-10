@@ -40,15 +40,6 @@ export function EODfailedOnPOSDir () {
 
       <p>TMPL-EODFailed</p>
 
-       <label for="">
-         Name of Caller:
-         <input type="text" name="" id="" />
-       </label>
-
-       <label for="">
-         Primary Contact Number
-         <input type="number" name="" id="" />
-       </label>
 
        <label for="">
          Alternate Contact Name:
@@ -65,10 +56,6 @@ export function EODfailedOnPOSDir () {
          <input type="text" name="" id="" />
        </label>
 
-       <label for="">
-         Email Address(if available)
-         <input type="text" name="" id="" />
-       </label>
 
        <label for="exampleFormControlTextarea1" class="form-label"
          >Detailed Description of the issue:</label
@@ -78,6 +65,23 @@ export function EODfailedOnPOSDir () {
            class="container-fluid"
            contenteditable="true"
          ></div>
+
+
+      <label for="">
+        *What happened prior to the issue happening?
+         <input type="text" name="" id="" />
+      </label>
+
+       <label for="">
+         *Did you do any troubleshooting before calling the service desk? (Please specify)
+         <input type="text" name="" id="" />
+      </label>
+
+
+       <label for="">
+         Error message encountered (screenshot required):
+         <input type="text" name="" id="" />
+      </label>
 
         <span>
          Is there a 'Server Offline' alarm on POS?

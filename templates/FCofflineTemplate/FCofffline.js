@@ -38,17 +38,15 @@ const FCofflineTemplate =
             </label>
           </span>
 
-          <p>TMPL-FC</p>
-
           <label for="">
-            Name of Caller:
+           **Service Advisory Description (if Available):
             <input type="text" name="" id="" />
           </label>
 
-          <label for="">
-            Primary Contact Number
-            <input type="number" name="" id="" />
-          </label>
+
+          <p>TMPL-FC</p>
+
+        
 
           <label for="">
             Alternate Contact Name:
@@ -65,11 +63,7 @@ const FCofflineTemplate =
             <input type="text" name="" id="" />
           </label>
 
-          <label for="">
-            Email Address(if available)
-            <input type="text" name="" id="" />
-          </label>
-
+     
           <label for="exampleFormControlTextarea1" class="form-label"
             >Detailed Description of the issue:</label
           >
@@ -78,6 +72,23 @@ const FCofflineTemplate =
             class="container-fluid"
             contenteditable="true"
           ></div>
+
+
+        <label for="">
+          Error message encountered (screenshot required):
+         <input type="text" name="" id="" />
+       </label>
+
+        <label for="">
+           *What happened prior to the issue happening?
+         <input type="text" name="" id="" />
+       </label>
+
+
+        <label for="">
+          *Did you do any troubleshooting before calling the service desk? (Please specify)
+         <input type="text" name="" id="" />
+       </label>
 
           <span>
             Is there any recent POS updgrade?

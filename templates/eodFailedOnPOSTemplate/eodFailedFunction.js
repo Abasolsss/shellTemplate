@@ -30,15 +30,21 @@ c-Location: ${textValue[1]}\r
 TMPL-EODFailed\r
 
 
-Name of Caller: ${textValue[2]}\r
-Primary Contact Number: ${primaryContactValue[0]}\r
-Alternate Contact Name: ${textValue[3]}\r
-Alternate Contact Number: ${primaryContactValue[1]}\r
-Best time to Call(BTTC): ${textValue[4]}\r
-Email Address(if available): ${textValue[5]}\r
+Alternate Contact Name: ${textValue[2]}\r
+Alternate Contact Number: ${primaryContactValue[0]}\r
+Best time to Call(BTTC): ${textValue[3]}\r
 
 Detailed Description of the issue:\r
 ${FCdetailed}\r
+
+*What happened prior to the issue happening?
+${textValue[4]}\r
+
+*Did you do any troubleshooting before calling the service desk? (Please specify) 
+${textValue[5]}\r
+
+Error message encountered (screenshot required):
+${textValue[6]}\r
 
 Is there a 'Server Offline' alarm on POS? ${radioFinalVal[2]}\r
 Have they successfully Closed the Shift on the POS? ${radioFinalVal[3]}\r
@@ -52,7 +58,7 @@ Is there any ticket/s opened related to the issue in the past month? ${radioFina
 Troubleshooting/Resolution:
 ${textTS}\r
 
-If the issue got fixed, what resolved the issue?: ${textValue[6]}\r
-If the issue is not fixed, what is the next step?: ${textValue[7]}`);
+If the issue got fixed, what resolved the issue?: ${textValue[7]}\r
+If the issue is not fixed, what is the next step?: ${textValue[8]}`);
 navigator.clipboard.writeText(text);
 };
