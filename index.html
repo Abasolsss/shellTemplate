@@ -31,8 +31,8 @@
   </head>
   <body>
     <nav class="navbar bg-warning">
-      <div class="row">
-          <div class="col-4">
+      <div class="row text-center">
+          <div class="col-6">
             <div class="navbars">
               <div class="img">
                  <div class="tenor-gif-embed" data-postid="23615382" data-share-method="host" data-aspect-ratio="0.76875" data-width="100%"><a href="https://tenor.com/view/ogusers-only-tough-only-tough-people-last-gif-23615382">Ogusers Only Tough GIF</a>from <a href="https://tenor.com/search/ogusers-gifs">Ogusers GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
@@ -45,18 +45,8 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
-            <div class="vlsl">
-                <h5>
-                  SL: 11/17/2024
-                </h5>
-                <p>MyNewPW080829202307021997</p>
-                <h5>
-                  VL: N/A
-                </h5>
-            </div>
-          </div>
-          <div class="col-4">
+      
+          <div class="col-6">
             <div class="weatherDiv">
             </div>
           </div>
@@ -132,17 +122,137 @@
         
         <div class="col-6">
               <div class="textArea">
-                <textarea class="form-control" placeholder="Sidenote Here" id="floatingTextarea2" style="height:200px;resize:none;"></textarea>
+                <textarea class="form-control mb-2" placeholder="Sidenote Here" id="floatingTextarea2" style="height:200px;resize:none;"></textarea>
                 <button type="button" class="btn btn-danger" id="resetBTN">Reset Template</button>
+
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">BGIS Template</button>
+
+                <button type="button" class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#pinpadModal">Pinpad Template</button>
               </div>
-       
-      <!-- <button type="button" class="btn btn-primary" id="testBtn">Test button</button> -->
-    
-            
           </div>
             </div>
       </div>
     </div>
+
+
+
+<!-- BGIS Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lgw">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">BGIS Email Template</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="BGISbody">
+        
+        <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="C-location">
+        </div>
+        
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Ticket #">  
+        </div>
+
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Affected Device">  
+        </div>
+
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Issue of the device">
+        </div>
+        
+        <div class="form-floating">
+                <textarea rows="10" style="height: 100%;" class="form-control" placeholder="Troubleshooting" id="bgisTS"></textarea>
+                  <label for="floatingTextarea">Troubleshooting</label>  
+        </div>
+        
+
+          <div class="bgisCopyPaste"></div>
+   
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="closeBtn">Close</button>
+        <button type="button" class="btn btn-primary" id="BGISbtn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Pinpad Modal -->
+<div class="modal fade" id="pinpadModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lgw">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">P400 Pinpad Email Template</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+<div class="modal-body" id="pinpadBody">
+        
+        <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="C-location">
+        </div>
+        
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Serial #">  
+        </div>
+
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Description of the issue">  
+        </div>
+
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Date and time with timezone">
+        </div>
+
+         <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Time issue started">
+        </div>
+
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="What was the site doing before the issue?">
+        </div>
+
+        <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Time pinpad was rebooted">
+        </div>
+
+         <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="What was seen on the P400 screen?(black,loading screen,etc.)">
+        </div>
+
+        
+         <div class="input-group mb-3">
+              <input type="text"  class="form-control" placeholder="Service cloud ticket #">
+        </div>
+
+
+
+        
+        <!-- <div class="form-floating">
+                <textarea rows="10" style="height: 100%;" class="form-control" placeholder="Troubleshooting" id="bgisTS"></textarea>
+                  <label for="floatingTextarea">Troubleshooting</label>  
+        </div> -->
+        
+
+ 
+              <div class="pinpadCopypaste"></div>
+   
+        
+      </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="pinpadBtn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

@@ -19,6 +19,7 @@ export const BOSPasswordReset = () => {
   localStorage.setItem("bestTime", textValue[4])
   localStorage.setItem("emailAd", textValue[5])
 
+  console.log(basicFunction)
   const text = (para.innerText =
 `Subject: ${textValue[0]}\r
 c-Location: ${textValue[1]}\r

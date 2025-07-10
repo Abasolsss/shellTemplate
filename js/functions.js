@@ -85,6 +85,7 @@
 
   const para = document.querySelector(".sample");
 
+  console.log(para)
   basicInputsArr.push(textValue,radioFinalVal,primaryNumVal,FCdetailed,para,inputText,inputRadioName, primaryContact)
 
 

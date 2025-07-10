@@ -22,12 +22,20 @@ import { posFreezing } from "../templates/posFreezingTemplate/posFreezingFunctio
 import { stuckFuelSale } from "../templates/stuckSaleTemplate/stuckSaleFunction.js";
 import { BOSPasswordReset } from "../templates/BOSpassTemplate/BOStemplateFunction.js";
 import { pinpadRelatedIssue } from "../templates/pinpadRelatedTemplate/pinpadRelatedFunction.js";
-
-
+import { BGISfn } from "../bgis_template/bgisFunction.js";
+import { pinpadFn } from "../pinpad_P400_template/pinpadFunction.js";
 
 const templateSelect = document.getElementById("templateSelector");
 
 const newIssueSelect = document.getElementById("newIssueSelector")
+
+const BGISbtn = document.getElementById("BGISbtn")
+const pinpadBtn = document.getElementById("pinpadBtn")
+
+// other templates for copy paste
+BGISbtn.addEventListener("click", BGISfn)
+pinpadBtn.addEventListener("click",pinpadFn)
+
 
 templateValueFunct();
 newIssueFunct();
@@ -35,6 +43,7 @@ newIssueFunct();
 const weatherDiv = document.querySelector(".weatherDiv")
 
 const APIKey = "60f06bb755213c4c8e5887d8f7b59046"
+
 const url = `https://api.openweathermap.org/data/2.5/weather?q=lahug&units=metric&appid=${APIKey}`
 
 const apiFetch = fetch(url)
